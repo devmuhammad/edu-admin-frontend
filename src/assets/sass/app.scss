@@ -1,0 +1,15 @@
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+
+$blue: #00923f;
+$pink: #00923f;
+$pink-invert: #fff;
+
+//$family-serif: "Merriweather", "Georgia", serif
+
+$primary: $pink;
+$primary-invert: $pink-invert;
+$danger: #DA251C;
+$warning: #fff500;
+//$family-primary: $family-serif;
+
+@import "../node_modules/bulma/bulma.sass";
