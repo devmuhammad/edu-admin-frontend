@@ -1,7 +1,13 @@
-<div class="columns">
-<span class="column is-one-quarter"></span> 
+<div :class="{modal:true, 'is-active':isActive}" style="border-radius:5px">
+  <div class="modal-background"></div>
+  <div class="modal-content ExamCenterModal">
 
-<span class="column is-half">    
+<div class="columns">
+<span class="column ExamCenterLogo" style="padding-top:85px;">
+    <img src="../../../assets/img/logo.png"/>
+</span> 
+
+<span class="column">    
   <h2>Add Exam Center</h2>
 <div class="centerForm">
 
@@ -48,5 +54,7 @@
 </div>
 </span>
 
-<span class="column is-one-quarter"></span>
+</div>    
+  </div>
+  <button class="modal-close is-large" aria-label="close" @click="closeModal"></button>
 </div>

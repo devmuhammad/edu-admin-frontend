@@ -10,7 +10,7 @@ export default {
 
 <style>
 .user-info{
-    margin-top: 30px;
+    margin-top: 65px;
     margin-bottom: 15px;
 }
 </style>

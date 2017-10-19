@@ -9,11 +9,11 @@
                 class="table_ctrl_item">
                 <i class="fa fa-print"></i>
             </router-link>
-            <router-link 
-                to="/admin/exam_center_upload/addnew"
+            <a 
+                @click = "setAddModalActive"
                 class="table_ctrl_item">
                 <i class="fa fa-plus"></i>
-            </router-link>
+            </a>
             <router-link 
                 to="/admin/exam_center_upload/uploadcenters"
                 class="table_ctrl_item">
@@ -50,4 +50,10 @@
         </examCenterTableItem>
     </tbody>
 </table>   
+
+<addCenter
+  :isActive="openModal"
+  :closeModal = "setAddModalActive"
+>
+</addCenter>
 </div>    

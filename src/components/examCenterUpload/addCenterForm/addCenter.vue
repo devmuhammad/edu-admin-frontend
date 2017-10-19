@@ -5,6 +5,7 @@
 <script>
 export default {
   name:"addCenter",
+  props:['isActive','closeModal'],
   data () {
     return {
     }

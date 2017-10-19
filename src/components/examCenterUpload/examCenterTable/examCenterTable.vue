@@ -4,12 +4,14 @@
 
 <script>
 import examCenterTableItem from "../examCenterTableItem/examCenterTableItem";
+import addCenter from "../addCenterForm/addCenter"
 
 export default {
   name: "examCenterTable",
   mounted: function () { return this.fetchCenters() },
   data () {
     return {
+      openModal: false,
       centers:[
         {
           'id' :1,
@@ -51,9 +53,10 @@ export default {
     },
     fetchCenters () {
       return true;
-    }
+    },
+    setAddModalActive () { return this.openModal = !this.openModal }
   },
-  components:{examCenterTableItem}
+  components:{examCenterTableItem, addCenter}
 }
 </script>
 

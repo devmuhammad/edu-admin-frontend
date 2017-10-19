@@ -78,3 +78,15 @@ nav > .panel-heading{
     padding-top:30px;
     text-align: center
 }
+
+.ExamCenterModal{
+    background-color:#fff;
+    height:400px;
+    width:800px;
+    padding:50px;
+    border-radius:5px
+}
+
+.ExamCenterLogo{
+    padding-top:85px;
+}
