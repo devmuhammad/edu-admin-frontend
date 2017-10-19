@@ -5,6 +5,12 @@ import Admin from '@/components/admin/admin'
 import Applications from '@/components/applications/applications'
 import Dashboard from '@/components/dashboard/dashboard'
 import Reports from '@/components/reports/reports'
+import examCenterUpload from "@/components/examCenterUpload/examCenterUpload"
+import examScoreUpload from "@/components/examScoreUpload/examScoreUpload"
+import jambScoreUpload from "@/components/jambScoreUpload/jambScoreUpload"
+import userMangement from "@/components/userManagement/userManagement"
+import paymentStatus from "@/components/PaymentStatus/paymentStatus"
+import changePassword from "@/components/changePassword/changePassword"
 
 Vue.use(Router)
 
@@ -25,6 +31,32 @@ export default new Router({
       path: '/admin',
       name: 'Admin',
       component: Admin,
+      children:[
+        {
+          'path':"exam_score_upload",
+          'component':examScoreUpload
+        },
+        {
+          'path':'exam_center_upload',
+          'component':examCenterUpload
+        },
+        {
+          'path':'jamb_score_upload',
+          'component':jambScoreUpload
+        },
+        {
+          'path':'user_management',
+          'component':userMangement
+        },
+        {
+          'path':'checkPayment_status',
+          'component':paymentStatus
+        },
+        {
+          'path':'change_password',
+          'component':changePassword
+        }
+      ]
     },
     {
       path: '/applications',

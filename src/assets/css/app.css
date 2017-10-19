@@ -51,3 +51,19 @@ nav > .panel-heading{
 .tabs{
     margin-bottom: -10px
 }
+
+.table_ctrl{
+    background-color: #da251c;
+    width:125px;
+    float:right;
+}
+
+.table_ctrl_item {
+    color:#fff;
+    padding:7px 7px 7px 7px;
+    cursor: pointer;
+}
+
+.table_ctrl_item:hover{
+    background-color: transparent;
+}
