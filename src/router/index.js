@@ -11,6 +11,8 @@ import jambScoreUpload from "@/components/jambScoreUpload/jambScoreUpload"
 import userMangement from "@/components/userManagement/userManagement"
 import paymentStatus from "@/components/PaymentStatus/paymentStatus"
 import changePassword from "@/components/changePassword/changePassword"
+import addCenter from "@/components/examCenterUpload/addCenterForm/addCenter"
+import examCenterTable from "@/components/examCenterUpload/examCenterTable/examCenterTable"
 
 Vue.use(Router)
 
@@ -38,7 +40,17 @@ export default new Router({
         },
         {
           'path':'exam_center_upload',
-          'component':examCenterUpload
+          'component':examCenterUpload,
+          'children': [
+            {
+              'path':'addNew',
+              'component': addCenter
+            },
+            {
+              'path':'allcenters',
+              'component': examCenterTable
+            }
+          ]
         },
         {
           'path':'jamb_score_upload',

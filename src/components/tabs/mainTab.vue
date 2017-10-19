@@ -18,9 +18,10 @@ export default {
   mounted: function() { return this.checkPresentRoute() },
   methods:{
     checkPresentRoute () {
-      let currentPath = window.location.pathname
+      let currentPath = window.location.pathname.split('/',4)
+          ,parentPath = "/"+currentPath[1];
       let newState = { dashboard_active:false, applications_active:false, reports_active:false, admin_active:false}
-      switch(currentPath)
+      switch(parentPath)
       {
         case '/':
           newState.dashboard_active = true;

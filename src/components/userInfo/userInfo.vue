@@ -13,7 +13,4 @@ export default {
     margin-top: 30px;
     margin-bottom: 15px;
 }
-.user-info>.button{
-    color:#00923f;
-}
 </style>

@@ -7,6 +7,7 @@ import examCenterTableItem from "../examCenterTableItem/examCenterTableItem";
 
 export default {
   name: "examCenterTable",
+  mounted: function () { return this.fetchCenters() },
   data () {
     return {
       centers:[
@@ -42,6 +43,14 @@ export default {
         }
         
       ]
+    }
+  },
+  methods:{
+    deleteCenter (id) {
+      return true;
+    },
+    fetchCenters () {
+      return true;
     }
   },
   components:{examCenterTableItem}

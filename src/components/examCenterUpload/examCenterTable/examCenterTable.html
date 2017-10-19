@@ -2,14 +2,32 @@
 <span class="columns">
     <span class="column is-one-quarter"></span>
     <span class="column"><h2>Exam Centers</h2></span>
-    <span class="column is-one-quarter"></span>
+    <span class="column is-one-quarter">
+        <div class="table_ctrl">
+            <router-link
+                to = "/admin/exam_center_upload/print_centers"
+                class="table_ctrl_item">
+                <i class="fa fa-print"></i>
+            </router-link>
+            <router-link 
+                to="/admin/exam_center_upload/addnew"
+                class="table_ctrl_item">
+                <i class="fa fa-plus"></i>
+            </router-link>
+            <router-link 
+                to="/admin/exam_center_upload/uploadcenters"
+                class="table_ctrl_item">
+                <i class="fa fa-upload"></i>
+            </router-link>
+            <a
+                @click = "deleteCenter"
+                class="table_ctrl_item">
+                <i class="fa fa-trash"></i>
+            </a>
+        </div> 
+    </span>
 </span>  
-<div class="table_ctrl">
-    <span class="table_ctrl_item"><i class="fa fa-print"></i></span>
-    <span class="table_ctrl_item"><i class="fa fa-plus"></i></span>
-    <span class="table_ctrl_item"><i class="fa fa-upload"></i></span>
-    <span class="table_ctrl_item"><i class="fa fa-trash"></i></span>
-</div> 
+
 <table class="table is-fullwidth is-bordered is-striped is-narrow">
     <thead>
       <tr>
