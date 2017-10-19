@@ -1,0 +1,35 @@
+<div class="exam_center_table">
+<span class="columns">
+    <span class="column is-one-quarter"></span>
+    <span class="column"><h2>Exam Centers</h2></span>
+    <span class="column is-one-quarter"></span>
+</span>  
+<div class="table_ctrl">
+    <span class="table_ctrl_item"><i class="fa fa-print"></i></span>
+    <span class="table_ctrl_item"><i class="fa fa-plus"></i></span>
+    <span class="table_ctrl_item"><i class="fa fa-upload"></i></span>
+    <span class="table_ctrl_item"><i class="fa fa-trash"></i></span>
+</div> 
+<table class="table is-fullwidth is-bordered is-striped is-narrow">
+    <thead>
+      <tr>
+        <th><input type="checkbox"/></th>
+        <th>Serial number</th>
+        <th>Centre</th>
+        <th>Capacity</th>
+        <th>Applicants</th>
+      </tr>
+    </thead>
+    <tbody> 
+        <examCenterTableItem 
+          v-for="(center, index) in centers" 
+          :key="index"
+          :centerName="center.name"
+          :serialNum = "center.id"
+          :centerCapacity = "center.capacity"
+          :applicantsNum = "center.numberOfApplicants"
+        >
+        </examCenterTableItem>
+    </tbody>
+</table>   
+</div>    

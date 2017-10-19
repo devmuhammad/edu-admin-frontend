@@ -2,40 +2,14 @@
   <p class="panel-heading">
     Administration
   </p>
-  <a class="panel-block is-active">
-    <span class="panel-icon">
-      <i class="fa fa-upload"></i>
-    </span>
-    Exam center upload
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fa fa-upload"></i>
-    </span>
-    JAMB score upload
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fa fa-upload"></i>
-    </span>
-    Exam score upload
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    User management
-  </a>
-  <a class="panel-block">
-    <span class="panel-icon">
-      <i class="fa fa-credit-card"></i>
-    </span>
-    Check payment status
-  </a>
-  <label class="panel-block">
-    <span class="panel-icon">
-      <i class="fa fa-unlock"></i>
-    </span>
-    Change Password
-  </label>
+
+  <adminPanelBlock
+    v-for = "(panelBlock, index) in panelBlocks"
+    :key = "index"
+    :route = "panelBlock.route"
+    :icon = "panelBlock.icon"
+    :panelTitle = "panelBlock.panelTitle"
+  >
+  </adminPanelBlock>
+
 </nav>

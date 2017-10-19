@@ -3,7 +3,16 @@
 </template>
 
 <script>
+import adminPanelBlock from "./adminPanelBlock"
+import panelBlocks from "./panelBlocks"
+
 export default {
-  name:"adminPanel"
+  name:"adminPanel",
+  data () {
+    return {
+      'panelBlocks' : panelBlocks.panelBlocks
+    }
+  },
+  components:{adminPanelBlock}
 }
 </script>
