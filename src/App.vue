@@ -1,23 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <Navbar/>
+    <section class="section">
+      <div class="container">
+        <userInfo/>
+        <mainTab/>
+        <span class="card"
+          <router-view/>
+        </span>
+      </div>
+    </section>  
   </div>
 </template>
 
 <script>
+import Navbar from "@/components/navbar/navbar";
+import mainTab from "@/components/tabs/mainTab"
+import userInfo from "@/components/userInfo/userInfo"
+
 export default {
-  name: 'app'
+  name: 'app',
+  components:{Navbar,mainTab,userInfo}
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style src="./assets/css/app.css"></style>
+<style rel="stylesheet" src="./assets/css/font-awesome.min.css"></style>
+<style lang="sass"> @import "./assets/sass/app.scss"; </style>

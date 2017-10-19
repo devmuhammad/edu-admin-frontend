@@ -1,0 +1,53 @@
+.navbar{
+
+    background: -webkit-linear-gradient(left, rgba(255,0,0,0), #00923f); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(255,0,0,0), #00923f); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(255,0,0,0), #00923f); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(255,0,0,0), #00923f); /* Standard syntax (must be last) */
+}
+
+.nlink:hover{
+    background-color: transparent; 
+}
+
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.box{
+    background-color: ghostwhite;
+}
+
+.index{
+    padding: 50px;
+}
+
+.applicant_table{
+    margin-top: 30px;
+}
+
+.applicant_table > table > thead > tr > th{
+    border-top: 1px solid #da251c;
+}
+
+.search_area{
+    margin-top: 20px;
+}
+
+.column > h2{
+    text-align: center;
+    color:#00923f;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+nav > .panel-heading{
+    background-color: #00923f;
+    color: #fff;
+}
+
+.tabs{
+    margin-bottom: -10px
+}

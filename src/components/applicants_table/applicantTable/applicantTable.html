@@ -1,0 +1,21 @@
+<div class="applicant_table">
+<table class="table is-fullwidth is-bordered is-striped is-narrow">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>ApplicantID</th>
+        <th>State</th>
+        <th>JAMB no.</th>
+        <th>JAMB score</th>
+      </tr>
+    </thead>
+    <tbody> 
+        <applicantTableItem 
+          v-for="(applicant, index) in applicants" 
+          :applicant="applicant" 
+          :key="index"
+        >
+        </applicantTableItem>
+    </tbody>
+</table>   
+</div>    
