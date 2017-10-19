@@ -32,6 +32,10 @@
     border-top: 1px solid #da251c;
 }
 
+.exam_center_table > table > thead > tr > th{
+    border-top: 1px solid #da251c;
+}
+
 .search_area{
     margin-top: 20px;
 }
@@ -54,8 +58,10 @@ nav > .panel-heading{
 
 .table_ctrl{
     background-color: #da251c;
-    width:125px;
+    width:130px;
     float:right;
+    height:25px;
+    border-radius: 3px;
 }
 
 .table_ctrl_item {
@@ -66,4 +72,9 @@ nav > .panel-heading{
 
 .table_ctrl_item:hover{
     background-color: transparent;
+}
+
+.centerForm{
+    padding-top:30px;
+    text-align: center
 }

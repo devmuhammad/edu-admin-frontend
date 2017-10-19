@@ -1,6 +1,6 @@
 let panelBlocks = [
     {
-      'route': "/admin/exam_center_upload",
+      'route': "/admin/exam_center_upload/allcenters",
       'icon' : "fa fa-upload",
       'panelTitle': "Exam Center Upload"
     },
