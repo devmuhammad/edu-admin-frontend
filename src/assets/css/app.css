@@ -6,8 +6,8 @@
     background: linear-gradient(to right, rgba(255,0,0,0), #00923f); /* Standard syntax (must be last) */
 }
 
-.nlink:hover{
-    background-color: transparent; 
+.nlink{
+    cursor: pointer; 
 }
 
 #app {
@@ -88,5 +88,5 @@ nav > .panel-heading{
 }
 
 .ExamCenterLogo{
-    padding-top:85px;
+    margin-top:75px;
 }
