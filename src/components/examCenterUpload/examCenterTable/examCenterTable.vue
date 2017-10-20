@@ -13,6 +13,7 @@ export default {
   data () {
     return {
       examcenters: [],
+      examcenter: {},
       errors: [],
      responseMsg: {
         responsestatus: '',
@@ -24,12 +25,46 @@ export default {
   },
   methods:{
 
+    CREATE_EXAMCENTER() {
+      HTTP.post(`add/examcenter/`, this.examcenter)
+        .then(response => {
+          this.responseMsg = response.data
+          this.GET_EXAMCENTERS(0)
+
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    },
+
+    UPDATE_EXAMCENTER() {
+      HTTP.PUT(`update/examcenter/`, this.examcenter)
+        .then(response => {
+          this.responseMsg = response.data
+          this.GET_EXAMCENTERS(0)
+
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    },
+
     DELETE_EXAMCENTER (id) {
       HTTP.delete(`delete/examcenter/` + id)
         .then(response => {
           this.responseMsg = response.data
           this.GET_EXAMCENTERS(0)
 
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    },
+    
+    GET_EXAMCENTER(id) {
+      HTTP.delete(`examcenter/` + id)
+        .then(response => {
+          this.examcenter = response.data
         })
         .catch(e => {
           this.errors.push(e)
