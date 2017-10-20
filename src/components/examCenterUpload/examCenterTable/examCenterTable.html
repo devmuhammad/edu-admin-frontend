@@ -20,7 +20,7 @@
                 <i class="fa fa-upload"></i>
             </router-link>
             <a
-                @click = "deleteCenter"
+                @click = "DELETE_EXAMCENTER"
                 class="table_ctrl_item">
                 <i class="fa fa-trash"></i>
             </a>
@@ -40,12 +40,12 @@
     </thead>
     <tbody> 
         <examCenterTableItem 
-          v-for="(center, index) in centers" 
+          v-for="(center, index) in examcenters" 
           :key="index"
-          :centerName="center.name"
-          :serialNum = "center.id"
+          :centerName="center.description"
+          :serialNum = "center.examcentreid"
           :centerCapacity = "center.capacity"
-          :applicantsNum = "center.numberOfApplicants"
+          :applicantsNum = "center.applicants"
         >
         </examCenterTableItem>
     </tbody>

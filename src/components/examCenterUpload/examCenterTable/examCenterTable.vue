@@ -4,54 +4,86 @@
 
 <script>
 import examCenterTableItem from "../examCenterTableItem/examCenterTableItem";
+import { HTTP } from '../../../resources/resources'
+
 import addCenter from "../addCenterForm/addCenter"
 
 export default {
   name: "examCenterTable",
-  mounted: function () { return this.fetchCenters() },
+  mounted: function () { return this.GET_EXAMCENTERS(0) },
   data () {
     return {
       openModal: false,
-      centers:[
-        {
-          'id' :1,
-          'name':"Government Day Secondary School, Opposite HQ 23 Armd Bde, Yola",
-          'capacity':600,
-          'numberOfApplicants': 18
-        },
-        {
-          'id' :2,
-          'name':"Community Secondary School, Aka Offot, Uyo",
-          'capacity':4000,
-          'numberOfApplicants': 17
-        },
-        {
-          'id' :3,
-          'name':"Government Day Secondary School, Shadawanka Cantonment, Bauchi",
-          'capacity':2000,
-          'numberOfApplicants': 47
-        },
-        {
-          'id' :4,
-          'name':"Command Secondary School, Makurdi",
-          'capacity':500,
-          'numberOfApplicants': 21
-        },
-        {
-          'id' :5,
-          'name':"Command Secondary School, Maimalari Cantonment, Maiduguri",
-          'capacity':800,
-          'numberOfApplicants': 4
-        }
-        
-      ]
+      examcenters: [],
+      examcenter: {},
+      errors: [],
+      responseMsg: {
+        responsestatus: '',
+        respmessage: '',
+        respcode: ''
+      },
     }
+    
   },
   methods:{
-    deleteCenter (id) {
-      return true;
+
+    CREATE_EXAMCENTER() {
+      HTTP.post(`add/examcenter/`, this.examcenter)
+        .then(response => {
+          this.responseMsg = response.data
+          this.GET_EXAMCENTERS(0)
+
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
     },
-    fetchCenters () {
+
+    UPDATE_EXAMCENTER() {
+      HTTP.PUT(`update/examcenter/`, this.examcenter)
+        .then(response => {
+          this.responseMsg = response.data
+          this.GET_EXAMCENTERS(0)
+
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    },
+
+    DELETE_EXAMCENTER (id) {
+      HTTP.delete(`delete/examcenter/` + id)
+        .then(response => {
+          this.responseMsg = response.data
+          this.GET_EXAMCENTERS(0)
+
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    },
+    
+    GET_EXAMCENTER(id) {
+      HTTP.delete(`examcenter/` + id)
+        .then(response => {
+          this.examcenter = response.data
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+    },
+
+    GET_EXAMCENTERS (stateid) {
+      HTTP.get(`examcenter?=` + stateid)
+        .then(response => {
+          this.examcenters = []
+          this.examcenters = response.data
+           
+        })
+        .catch(e => {
+          this.errors.push(e)
+        })
+
       return true;
     },
     setAddModalActive () { return this.openModal = !this.openModal }
