@@ -1,0 +1,29 @@
+<div>
+  <dashTab></dashTab>
+  <div class="dash_tables">   
+    <div class="table_ctrl" style="width:70px">
+        <span class="table_ctrl_item"><i class="fa fa-print"></i> Print</span>
+    </div>  
+    <table class="table is-fullwidth is-bordered is-striped is-narrow">
+        <thead>
+          <tr>
+            <th>Faculty</th>
+            <th>Female</th>
+            <th>Male</th>
+            <th>Grand Total</th>
+          </tr>
+        </thead>
+        <tbody> 
+            <appByFacultyItem 
+              v-for="(res, index) in response" 
+              :name = "res.name" 
+              :female = "res.female"
+              :male = "res.male"
+              :total = "res.grand_total"
+              :key="index"
+            >
+            </appByFacultyItem>
+        </tbody>
+    </table>   
+  </div>    
+</div>

@@ -1,33 +1,32 @@
 <div class="exam_center_table">
 <span class="columns">
     <span class="column is-one-quarter"></span>
-    <span class="column"><h2>Exam Centers</h2></span>
+    <span class="column"><h2 class="title is-4">Exam Centers</h2></span>
     <span class="column is-one-quarter">
-        <div class="table_ctrl">
-            <router-link
-                to = "/admin/exam_center_upload/print_centers"
-                class="table_ctrl_item">
-                <i class="fa fa-print"></i>
-            </router-link>
-            <a 
-                @click = "setAddModalActive"
-                class="table_ctrl_item">
-                <i class="fa fa-plus"></i>
-            </a>
-            <router-link 
-                to="/admin/exam_center_upload/uploadcenters"
-                class="table_ctrl_item">
-                <i class="fa fa-upload"></i>
-            </router-link>
-            <a
-                @click = "DELETE_EXAMCENTER"
-                class="table_ctrl_item">
-                <i class="fa fa-trash"></i>
-            </a>
-        </div> 
     </span>
 </span>  
-
+<div class="table_ctrl">
+    <router-link
+        to = "/admin/exam_center_upload/print_centers"
+        class="table_ctrl_item">
+        <i class="fa fa-print"></i>
+    </router-link>
+    <a 
+        @click = "setAddModalActive"
+        class="table_ctrl_item">
+        <i class="fa fa-plus"></i>
+    </a>
+    <router-link 
+        to="/admin/exam_center_upload/uploadcenters"
+        class="table_ctrl_item">
+        <i class="fa fa-upload"></i>
+    </router-link>
+    <a
+        @click = "setAddModalActive"
+        class="table_ctrl_item">
+        <i class="fa fa-trash"></i>
+    </a>
+</div>   
 <table class="table is-fullwidth is-bordered is-striped is-narrow">
     <thead>
       <tr>

@@ -1,24 +1,24 @@
 <div class="tabs is-boxed is-fullwidth is-small" style="margin-bottom:-1px;">
     <ul>
-      <li :class="{'is-active':currentState.dashboard_active}" @click="checkPresentRoute">
+      <li :class="{'is-active':currentState.dashboard_active, 'mainTab':true}" @click="checkPresentRoute">
         <router-link to="/">
           <span class="icon is-small"><i class="fa fa-tachometer"></i></span>
           <span>Dashboard</span>
         </router-link>
       </li>
-      <li :class="{'is-active':currentState.applications_active}" @click="checkPresentRoute">
+      <li :class="{'is-active':currentState.applications_active, 'mainTab':true}" @click="checkPresentRoute">
         <router-link to="/applications">
           <span class="icon is-small"><i class="fa fa-list-alt"></i></span>
           <span>Applications</span>
         </router-link>
       </li>
-      <li :class="{'is-active':currentState.admin_active}" @click="checkPresentRoute">
+      <li :class="{'is-active':currentState.admin_active, 'mainTab':true}" @click="checkPresentRoute">
         <router-link to="/admin/user_management">
           <span class="icon is-small"><i class="fa fa-lock"></i></span>
           <span>Administration</span>
         </router-link>
       </li>
-      <li :class="{'is-active':currentState.reports_active}" @click="checkPresentRoute">
+      <li :class="{'is-active':currentState.reports_active, 'mainTab':true}" @click="checkPresentRoute">
         <router-link to="/reports">
           <span class="icon is-small"><i class="fa fa-file-text-o"></i></span>
           <span>Reports</span>

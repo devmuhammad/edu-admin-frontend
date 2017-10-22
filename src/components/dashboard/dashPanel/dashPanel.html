@@ -1,0 +1,15 @@
+<nav class="panel">
+  <p class="panel-heading">
+    Dashboard statistics
+  </p>
+
+  <dashPanelBlock
+    v-for = "(panelBlock, index) in panelBlocks"
+    :key = "index"
+    :route = "panelBlock.route"
+    :icon = "panelBlock.icon"
+    :panelTitle = "panelBlock.panelTitle"
+  >
+  </dashPanelBlock>
+
+</nav>

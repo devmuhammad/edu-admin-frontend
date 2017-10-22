@@ -4,7 +4,12 @@
 
 <script>
 export default {
-  name:"userInfo"
+  name:"userInfo",
+  data () {
+    return {
+      currentDate: new Date().toDateString()
+    }
+  }
 }
 </script>
 
@@ -12,5 +17,8 @@ export default {
 .user-info{
     margin-top: 80px;
     margin-bottom: 20px;
+}
+.date_section{
+  float: right;
 }
 </style>
