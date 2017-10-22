@@ -1,6 +1,6 @@
 import api from "../../api/ExamCenterAPI";
 
-const state = {
+let state = {
   examcenters: [],
   examcenter: {},
   errors: [],
@@ -12,11 +12,10 @@ const getters = {
 }
 
 const mutations = {
-  getExamCenters (state,stateid) {
-    state.examcenters = api.GET_EXAMCENTERS(stateid)
-    /**.then((res)=>{
-      state.examcenters = res;
-    })*/
+  getExamCenters:  (state,stateid) => {
+    return api.GET_EXAMCENTERS(stateid)
+    .then((res) => { state.examcenters = res })
+    .catch((err) => { state.errors.push(err) })
   }
 }
 
