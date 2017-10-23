@@ -4,6 +4,7 @@
 
 <script>
   import FileUpload from 'vue-simple-upload/dist/FileUpload'
+
   export default {
     name:"uploadResult",
     data () {
@@ -13,16 +14,78 @@
         validateVisible: false,
         exportVisible: false,
         dataVisible:false,
-        messages:''
+        finishVisible:false,
+        messages:'',
+        json_fields : {
+          "score"      : "Number",
+          "regNum"      : "String",
+          "depSN"   : "String",
+          "candName" : "String",
+          "stateoforigin"    : "String",
+          "lga"    : "String",
+          "sex"    : "String",
+          "age"    : "Number",
+          "engScore"    : "Number",
+          "subj2"    : "String",
+          "subj2score"    : "Number",
+          "subj3"    : "Number",
+          "subj3score"    : "String",
+          "subj4"    : "String",
+          "subj4score"    : "Number",
+          "totalscore"    : "Number",
+          "firschoice"    : "String",
+          "corsAbrev"    : "String",
+          "corsid"    : "String",
+          "facAbrev"    : "String",
+          "telNo"    : "String",
+          "status"    : "String",
+          "exception"    : "String"
+        },
+json_data: [],
+        json_meta: [
+          [{
+            "key": "charset",
+            "value": "utf-8"
+          }]
+        ]
 
       }
     },
     components: {
-      'fileupload': FileUpload
+      'fileupload': FileUpload,
     },
     computed:{
       validResults (){
-        return this.$store.getters.scoreResults
+        const results =this.$store.getters.scoreResults
+        self =this.json_data
+       results.forEach(function(item){
+        self.push({
+           score: item.score,
+           regNum: item.regNum,
+           depSN: item.depSN,
+           candName: item.candName,
+           stateoforigin: item.stateoforigin,
+           lga:item.lga,
+           sex: item.sex,
+           age: item.age,
+           engScore: item.engScore,
+           subj2: item.subj2,
+           subj2score: item.subj2score,
+           subj3: item.subj3,
+           subj3score: item.subj3score,
+           subj4:item.subj4,
+           subj4score: item.subj4score,
+           totalscore:item.totalscore,
+           firschoice: item.firschoice,
+           corsAbrev:item.corsAbrev,
+           corsid: item.corsid,
+           facAbrev: item.facAbrev,
+           telNo: item.telNo,
+           status: item.status,
+           exception: item.exception
+         })
+       })
+        return self
       }
     },
     methods: {
@@ -32,6 +95,7 @@
         this.exportVisible =true
         this.validateVisible =false
         this.dataVisible=true
+        this.finishVisible=true
         this.messages='Data Validation Completed'
       },
       exportScore (){
@@ -41,14 +105,18 @@
         this.validateVisible =false
         this.fileVisible =false
         this.dataVisible=true
+        this.finishVisible=true
         this.messages='Data Succesfully Exported'
       },
-      chooseFile (){
-this.uploadVisible=false
- this.exportVisible =false
- this.validateVisible =false
-this.fileVisible =true
-        this.dataVisible =false
+      finishResult (){
+        this.uploadVisible=true
+        this.exportVisible =false
+        this.validateVisible =false
+        this.fileVisible =false
+        this.dataVisible=false
+        this.finishVisible=false
+        this.messages=''
+        this.json_date =[]
       },
       startUpload(e) {
         // file upload start event
@@ -60,7 +128,8 @@ this.fileVisible =true
         this.uploadVisible=false
         this.exportVisible =false
         this.validateVisible =true
-        this.dataVisible=true
+        this.dataVisible=false
+        this.finishVisible=false
         this.messages='Data Succesfully Imported'
       },
       progress(e) {

@@ -25,13 +25,27 @@ margin-bottom:10px;">
       </p>
 
       <p class="control">
-  <button class="button is-primary is-inverted"
-   v-if="exportVisible" type="submit" @click="exportScore">
-     <span class="icon is-small">
+        <download-excel
+          class   = "button is-primary"
+          :data   = "validResults"
+          :fields = "json_fields"
+          :meta   = "json_meta"
+          name    = "jambscore.xls" v-if="exportVisible">
+     Export to excel
+          <span class="icon is-small" style="margin-left:10px;">
         <i class="fa fa-file-excel-o"></i>
       </span>
-    <span>Export Validated Result</span>
-  </button>
+        </download-excel>
+
+      </p>
+      <p class="control">
+        <button class="button is-primary is-inverted"
+                v-if="finishVisible"  @click="finishResult">
+     <span class="icon is-small">
+        <i class="fa fa-check"></i>
+      </span>
+          <span>Finish</span>
+        </button>
       </p>
 
     </div>
