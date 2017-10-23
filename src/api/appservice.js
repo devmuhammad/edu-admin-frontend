@@ -21,7 +21,7 @@ const state = {
   activedocument: {},
   appregfill: {
     registered: 0,
-    fillied: 0    
+    fillied: 0
   },
   errors: [],
   responseMsg: {
@@ -34,16 +34,29 @@ const state = {
     sValue: '',
     offset: 0,
     limit: 20
-  }
+  },
+  uploadResultList:[]
+}
+const actions ={
+
+}
+  const getters ={
+getUploadedResults (state){
+  return this.state.uploadResultList
+}
 }
 const mutations = {
-
+uploadResultList (){
+  return {
+  score:1, RegNum :'21223'
+  }
+},
   ADD_USER (state, newuser) {
     HTTP.post(`add/user`, newuser)
     .then(response => {
       this.responseMsg = response.data
       state.users.push(newuser)
-     
+
     })
     .catch(e => {
       this.errors.push(e)
@@ -65,7 +78,7 @@ const mutations = {
     .then(response => {
       this.responseMsg = response.data
       state.users.$remove(state.userprofile)
-     
+
     })
     .catch(e => {
       this.errors.push(e)
@@ -182,7 +195,7 @@ const mutations = {
     .then(response => {
       this.responseMsg = response.data
       state.users.push(newcenter)
-     
+
     })
     .catch(e => {
       this.errors.push(e)
@@ -204,7 +217,7 @@ const mutations = {
     .then(response => {
       this.responseMsg = response.data
       state.users.$remove(state.examcenter)
-     
+
     })
     .catch(e => {
       this.errors.push(e)
@@ -315,5 +328,7 @@ const mutations = {
 
 export default new Vuex.Store({
   state,
-  mutations
+  mutations,
+  actions,
+  getters
 })

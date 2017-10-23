@@ -1,0 +1,76 @@
+<div>
+  <p class="is-success has-text-left"  style="color:forestgreen; font-size:17px; font-weight:bold;
+margin-bottom:10px;">
+   JambScore Excel Import Management Module
+  </p>
+
+    <div class="field is-grouped">
+      <p class="is-success control" v-if="validateVisible|validateVisible|exportVisible" style="color:forestgreen; font-size:15px; font-weight:bold;">
+        {{messages}}
+      </p>
+      <p class="control">
+        <fileupload target="http://localhost:8888/ndaapi/v1/service/excels" action="POST"
+                    @progress="progress" @start="startUpload" @finish="finishUpload" ref="fileupload"
+                    id="fileupload"  class="input-file button is-primary is-inverted " v-if="uploadVisible"
+        />
+      </p>
+      <p class="control">
+  <button class="button is-primary is-inverted"
+  @click="validateScore" v-if="validateVisible">
+     <span class="icon is-small">
+        <i class="fa fa-check"></i>
+      </span>
+    <span>Validate Imported Result</span>
+  </button>
+      </p>
+
+      <p class="control">
+  <button class="button is-primary is-inverted"
+   v-if="exportVisible" type="submit" @click="exportScore">
+     <span class="icon is-small">
+        <i class="fa fa-file-excel-o"></i>
+      </span>
+    <span>Export Validated Result</span>
+  </button>
+      </p>
+
+    </div>
+
+
+<div class="applicant_table  is-12-desktop is-12-mobile is-12-fullhd">
+  <table class="table is-fullwidth is-bordered is-striped is-narrow" v-if="dataVisible">
+    <thead>
+    <tr>
+      <th>Score</th>
+      <th>Reg_No</th>
+      <th>DepSN</th>
+      <th>Name</th>
+      <th>State</th>
+      <th>Lga</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>Total Score</th>
+      <th>Status</th>
+      <th>Exception</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+<tr v-for="result in validResults">
+  <td>{{result.score}}</td>
+  <td>{{result.regNum}}</td>
+  <td>{{result.depSN}}</td>
+  <td>{{result.candName}}</td>
+  <td>{{result.stateoforigin}}</td>
+  <td>{{result.lga}}</td>
+  <td>{{result.sex}}</td>
+  <td>{{result.age}}</td>
+  <td>{{result.totalscore}}</td>
+  <td>{{result.status}}</td>
+  <td>{{result.exception}}</td>
+</tr>
+    </tbody>
+  </table>
+</div>
+</div>

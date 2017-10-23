@@ -6,6 +6,7 @@ import Applications from '@/components/applications/applications'
 import Dashboard from '@/components/dashboard/dashboard'
 import Reports from '@/components/reports/reports'
 
+
 Vue.use(Router)
 
 export default new Router({

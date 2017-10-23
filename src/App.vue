@@ -9,8 +9,9 @@
           <router-view/>
         </span>
       </div>
-    </section>  
+    </section>
   </div>
+
 </template>
 
 <script>
@@ -26,4 +27,4 @@ export default {
 
 <style src="./assets/css/app.css"></style>
 <style rel="stylesheet" src="./assets/css/font-awesome.min.css"></style>
-<style lang="sass"> @import "./assets/sass/app.scss"; </style>
+<style lang="sass"> @import "./assets/sass/app.scss" </style>
