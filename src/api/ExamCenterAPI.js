@@ -10,7 +10,7 @@ export default {
         })
       }
 
-      const res = await res()
+      return await res()
     },
 
     UPDATE_EXAMCENTER: async (examcenter) => {
