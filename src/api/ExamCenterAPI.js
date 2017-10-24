@@ -54,7 +54,7 @@ export default {
         return new Promise((resolve, reject) => {
           HTTP.get(`examcenter?=` + stateid)
           .then((response) => { resolve(response.data)  })
-          .catch(e => { reject(e) })
+          .catch(e => { console.log(e); reject(e) })
         })
       }
 

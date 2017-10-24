@@ -1,18 +1,18 @@
 let panelBlocks = [
   {
-    'route': "/admin/exam_center_upload/allcenters",
+    'route': "/",
     'icon' : "fa fa-bar-chart",
     'panelTitle': "Applicant by faculty/departments"
   },
   {
-    'route': "/admin/jamb_score_upload",
+    'route': "/applicantsperweek",
     'icon' : "fa fa-bar-chart",
     'panelTitle': "Applicants per week"
   },
   {
-    'route': "/admin/exam_score_upload",
+    'route': "/table/tableofapplicantsbystate",
     'icon' : "fa fa-bar-chart",
-    'panelTitle': "Applicants by state of origin"
+    'panelTitle': "Applicants by state"
   }
 ]
 

@@ -1,5 +1,12 @@
 <tr>
-    <td><input type="checkbox"/></td>
+    <td>
+        <input 
+          type = "checkbox" 
+          :value = "cid" 
+          @click = "isSelected"
+          v-model = "checkbox"
+        />
+    </td>
     <td>{{serialNum}}</td>
     <td>{{centerName}}</td>
     <td>{{centerCapacity}}</td>

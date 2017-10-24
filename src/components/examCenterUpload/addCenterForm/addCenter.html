@@ -13,7 +13,7 @@
 
     <div class="field">
     <p class="control has-icons-left">
-        <input class="input" type="number" placeholder="Capacity">
+        <input class="input" type="number" placeholder="Capacity" v-model="examcenter.capacity">
         <span class="icon is-small is-left">
           <i class="fa fa-pie-chart"></i>
         </span>
@@ -22,7 +22,7 @@
 
     <div class="field">
     <p class="control has-icons-left">
-        <textarea class="textarea" placeholder="Write center description here."></textarea>
+        <textarea class="textarea" placeholder="Write center description here." v-model="examcenter.description"></textarea>
     </p>
     </div>
 
@@ -44,7 +44,7 @@
 
     <div class="field column">
     <p class="control" style="float:right">
-        <button class="button is-primary">
+        <button class="button is-primary" @click="createNew">
         Add center
         </button>
     </p>

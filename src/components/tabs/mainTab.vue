@@ -39,6 +39,10 @@ export default {
           newState.admin_active = true;
           this.currentState = newState
           break;  
+        default:
+          newState.dashboard_active = true;
+          this.currentState = newState;
+          break;
       }
     }
   }

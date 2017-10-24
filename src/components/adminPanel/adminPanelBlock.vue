@@ -5,6 +5,6 @@
 <script>
 export default {
   name:'adminPanelBlock',
-  props:['route','icon','panelTitle']
+  props:['route','icon','panelTitle', 'isActive']
 }
 </script>

@@ -1,16 +1,16 @@
 <div class="tabs is-toggle is-centered">
   <ul>
-    <li class="is-active">
-      <a>
+    <li :class="{'is-active':isTableRoute}">
+      <router-link :to="tableLink">
         <span class="icon is-small"><i class="fa fa-table"></i></span>
         <span>Table</span>
-      </a>
+      </router-link>
     </li>
-    <li>
-      <a>
+    <li :class="{'is-active':isGraphRoute}">
+      <router-link :to="graphLink">
         <span class="icon is-small"><i class="fa fa-bar-chart"></i></span>
         <span>Graph</span>
-      </a>
+      </router-link>
     </li>
   </ul>
 </div>

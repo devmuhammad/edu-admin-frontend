@@ -5,6 +5,8 @@
     <span class="column is-one-quarter">
     </span>
 </span>  
+
+<span v-if="examcenters.length > 0">
 <div class="table_ctrl">
     <router-link
         to = "/admin/exam_center_upload/print_centers"
@@ -22,7 +24,7 @@
         <i class="fa fa-upload"></i>
     </router-link>
     <a
-        @click = "setAddModalActive"
+        @click = "deleteCenter"
         class="table_ctrl_item">
         <i class="fa fa-trash"></i>
     </a>
@@ -30,7 +32,7 @@
 <table class="table is-fullwidth is-bordered is-striped is-narrow">
     <thead>
       <tr>
-        <th><input type="checkbox"/></th>
+        <th><input type="checkbox" v-model="selectAll"/></th>
         <th>Serial number</th>
         <th>Centre</th>
         <th>Capacity</th>
@@ -45,6 +47,9 @@
           :serialNum = "center.examcentreid"
           :centerCapacity = "center.capacity"
           :applicantsNum = "center.applicants"
+          :checkbox = "ec_checkboxes"
+          :cid = "center.examcentreid"
+          :isSelected = "isSelected"
         >
         </examCenterTableItem>
     </tbody>
@@ -55,4 +60,16 @@
   :closeModal = "setAddModalActive"
 >
 </addCenter>
+</span>
+
+<span class="columns" v-else>
+    <span class="column"></span>
+    <span class="column" style="margin-top:100px">
+        <FadeLoader
+          :loading = "loading"  
+          color="#da251c"
+          size="20px"
+        ></FadeLoader>
+    </span>
+</span>
 </div>    

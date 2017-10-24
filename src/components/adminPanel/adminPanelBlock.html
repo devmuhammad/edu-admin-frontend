@@ -1,6 +1,6 @@
 <router-link 
     :to =  "route"
-    :class = "{'panel-block':true, 'is-active':true}"
+    :class = "{'panel-block':true, 'is-active':isActive}"
 >
     <span class="panel-icon"> <i :class="icon"></i> </span>
     {{ panelTitle }}

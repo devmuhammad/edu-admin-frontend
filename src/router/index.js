@@ -13,7 +13,10 @@ import paymentStatus from "@/components/PaymentStatus/paymentStatus"
 import changePassword from "@/components/changePassword/changePassword"
 import addCenter from "@/components/examCenterUpload/addCenterForm/addCenter"
 import examCenterTable from "@/components/examCenterUpload/examCenterTable/examCenterTable"
-
+import appByFaculty from "@/components/applicantsByFaculty/appByFacultyTable/appByFacultyTable"
+import appByFacultyGraph from "@/components/applicantsByFaculty/appByFacultyGraph/appByFacultyGraph"
+import appByState from "@/components/applicantsByState/appByStateTable/appByStateTable"
+import appByStateGraph from '@/components/applicantsByState/appByStateGraph/appByStateGraph'
 Vue.use(Router)
 
 export default new Router({
@@ -26,8 +29,25 @@ export default new Router({
     },
     {
       path: '/',
-      name: 'Dashboard',
-      component: Dashboard
+      component: Dashboard,
+      children:[
+        {
+          'path':'/',
+          'component':appByFaculty
+        },
+        {
+          'path':'graph/applicantsbyfacultygrapicalrep',
+          'component':appByFacultyGraph
+        },
+        {
+          'path': '/table/tableofapplicantsbystate',
+          'component': appByState
+        },
+        {
+          'path': '/graph/applicantsbystategrapicalrep',
+          'component':appByStateGraph
+        }
+      ]
     },
     {
       path: '/admin',
