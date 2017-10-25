@@ -25,19 +25,20 @@ export default {
     ]),
     selectAll: {
       get: function () {
-          return this.examcenters ? this.ec_checkboxes.length == this.examcenters.length : false;
+        return this.examcenters ? this.ec_checkboxes.length == this.examcenters.length : false;
       },
       
       set: function (value) {
-          let ec_checkboxes = [];
+        let ec_checkboxes = [];
 
-          if (value) {
-            this.examcenters.forEach( function (examcenter) {
-                ec_checkboxes.push(examcenter.examcentreid); 
-            });
-          }
-          this.ec_checkboxes = ec_checkboxes;
-          console.log(ec_checkboxes)
+        if (value) 
+        {
+          this.examcenters.forEach( function (examcenter) {
+              ec_checkboxes.push(examcenter.examcentreid); 
+          });
+        }
+        this.ec_checkboxes = ec_checkboxes;
+        console.log(ec_checkboxes)
       }
     }
   },

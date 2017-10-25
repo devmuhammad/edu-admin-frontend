@@ -5,7 +5,7 @@
 <script>
 export default {
   name:'appByFacultyItem',
-  props:['name','female','male','total']
+  props:['name','faculties']
 }
 </script>
 

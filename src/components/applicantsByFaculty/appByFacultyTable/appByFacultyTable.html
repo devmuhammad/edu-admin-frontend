@@ -11,23 +11,20 @@
     <table class="table is-fullwidth is-bordered is-striped is-narrow">
         <thead>
           <tr>
-            <th>Faculty</th>
+            <th>Faculty/State</th>
+            <th>Department</th>
             <th>Female</th>
             <th>Male</th>
             <th>Grand Total</th>
           </tr>
-        </thead>
-        <tbody> 
+        </thead> 
             <appByFacultyItem 
-              v-for="(res, index) in response" 
-              :name = "res.name" 
-              :female = "res.female"
-              :male = "res.male"
-              :total = "res.grand_total"
+              v-for="(res, index) in applicantsbystate" 
+              :name = "res.state"
+              :faculties = "res.faculties"
               :key="index"
             >
             </appByFacultyItem>
-        </tbody>
     </table>   
   </div>    
 </div>

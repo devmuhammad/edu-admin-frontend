@@ -10,16 +10,10 @@ export default {
     'centerCapacity',
     'applicantsNum',
     'serialNum', 
-    'cbox', 
+    'checkbox', 
     'cid',
     'isSelected'
   ],
-  computed: {
-    checkbox: { 
-      get: function () {this.cbox} ,
-      set: function () { return this.cbox }
-    } 
-  }
 }
 </script>
 
