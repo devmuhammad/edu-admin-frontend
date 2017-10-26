@@ -13,6 +13,18 @@ export default {
     return await res()
   },
 
+  GET_APP_PER_WEEK: async () => {
+    const res  = () => {
+      return new Promise((resolve, reject) => {
+        HTTP.post('/week/userdetail')
+        .then((res) => { resolve(res.data) })
+        .catch((e) => { reject(e) })
+      })
+    }
+
+    return await res()
+  },
+
   APP_BY_FACULTY_STATE : async () => {
     const res = () => {
 

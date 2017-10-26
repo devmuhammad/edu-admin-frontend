@@ -4,6 +4,7 @@
 
 <script>
 import dashPanel from "./dashPanel/dashPanel"
+import reportPanel from "./reportPanel/reportPanel"
 import appByFacultyTable from "../applicantsByFaculty/appByFacultyTable/appByFacultyTable"
 
 export default {
@@ -13,6 +14,6 @@ export default {
       currentRoute: window.location.pathname
     }
   },
-  components:{dashPanel, appByFacultyTable}
+  components:{dashPanel,reportPanel, appByFacultyTable}
 }
 </script>

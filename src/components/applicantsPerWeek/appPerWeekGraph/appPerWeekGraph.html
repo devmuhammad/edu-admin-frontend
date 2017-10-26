@@ -1,7 +1,29 @@
 <div>
   <dashTab
     tableLink='/table/applicantsperweek'
-    graphLink='/graph/applicantsperweekgrapicalrep'
+    graphLink='/graph/applicantsperweekgraphicalrep'
   ></dashTab>
-  <h2>Applicants per week graph here</h2>
+  <div class="container column is-12">
+      <div class="chart_container">
+        <div v-if = "isData == true">
+          <LineChart
+            :options="options"
+            :chartData = "chartData"
+            :chartLabels = "chartLabels">
+          </LineChart>
+        </div>
+                 
+        <span class="columns" v-else>
+          <span class="column"></span>
+          <span class="column" style="margin-top:200px;padding-bottom:200px">
+              <FadeLoader
+                :loading = "loading"  
+                color="#da251c"
+                size="20px"
+              ></FadeLoader>
+          </span>
+        </span>
+      </div>       
+    </div>
+
 </div>
