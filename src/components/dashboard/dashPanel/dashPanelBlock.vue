@@ -5,6 +5,6 @@
 <script>
 export default {
   name:"dashPanelBlock",
-  props:['route','icon','panelTitle']
+  props:['route','icon','panelTitle', 'isActive', 'setActive']
 }
 </script>

@@ -5,7 +5,15 @@
 <script>
 export default {
   name:'appByFacultyItem',
-  props:['name','faculties']
+  props:['states'],
+  data(){
+    return {
+      showDepts: false
+    }
+  },
+  methods:{
+    toggleDept(){ return this.showDepts = !this.showDepts}
+  }
 }
 </script>
 

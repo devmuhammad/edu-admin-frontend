@@ -20,7 +20,7 @@ export default {
       let newBlockState = panelBlocks.panelBlocks
           ,pname = window.location.pathname.split("/",3)
           ,currentRoute = "/"+pname[2]
-
+console.log(currentRoute)
       const clear_state = (pntr) => {
         for(let i=0;i<newBlockState.length;i++){
           newBlockState[i].activity = false
