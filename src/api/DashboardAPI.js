@@ -79,6 +79,7 @@ export default {
                 def_.faculties[0].name = fclty_pointer
                 def_.faculties[0].departments.push(def_dept)
 
+                //push to default response
                 default_res.push(def_)
               }
             }

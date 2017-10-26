@@ -5,7 +5,7 @@ let panelBlocks = [
     'panelTitle': "Applicant by faculty/departments"
   },
   {
-    'route': "/applicantsperweek",
+    'route': "/table/applicantsperweek",
     'icon' : "fa fa-bar-chart",
     'panelTitle': "Applicants per week"
   },

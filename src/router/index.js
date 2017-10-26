@@ -17,6 +17,8 @@ import appByFaculty from "@/components/applicantsByFaculty/appByFacultyTable/app
 import appByFacultyGraph from "@/components/applicantsByFaculty/appByFacultyGraph/appByFacultyGraph"
 import appByState from "@/components/applicantsByState/appByStateTable/appByStateTable"
 import appByStateGraph from '@/components/applicantsByState/appByStateGraph/appByStateGraph'
+import appPerWeekGraph from '@/components/applicantsPerWeek/appPerWeekGraph/appPerWeekGraph'
+import appPerWeekTable from '@/components/applicantsPerWeek/appPerWeekTable/appPerWeekTable'
 Vue.use(Router)
 
 export default new Router({
@@ -46,7 +48,15 @@ export default new Router({
         {
           'path': '/graph/applicantsbystategrapicalrep',
           'component':appByStateGraph
-        }
+        },
+        {
+          'path': '/table/applicantsperweek',
+          'component':appPerWeekTable
+        },
+        {
+          'path': '/graph/applicantsperweekgraphicalrep',
+          'component':appPerWeekGraph
+        },
       ]
     },
     {

@@ -3,5 +3,27 @@
     tableLink='/table/tableofapplicantsbystate'
     graphLink='/graph/applicantsbystategrapicalrep'
   ></dashTab>
-  <h2>Display graph here</h2>
+  
+    <div class="container column is-12">
+      <div class="chart_container">
+        <div v-if = "isData == true">
+          <BarChart
+            :options="options"
+            :chartData = "chartData"
+            :chartLabels = "chartLabels">
+          </BarChart>
+        </div>
+                 
+        <span class="columns" v-else>
+          <span class="column"></span>
+          <span class="column" style="margin-top:200px;padding-bottom:200px">
+              <FadeLoader
+                :loading = "loading"  
+                color="#da251c"
+                size="20px"
+              ></FadeLoader>
+          </span>
+        </span>
+      </div>       
+    </div>
 </div>

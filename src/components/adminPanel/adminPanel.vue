@@ -12,42 +12,43 @@ export default {
   data () {
     return {
       'panelBlocks' : panelBlocks.panelBlocks,
-      'unset': false
+      'path': window.location.pathname
     }
   },
   methods: {
     setBlockActive () {
       let newBlockState = panelBlocks.panelBlocks
-      ,currentBlockState = this.panelBlocks
-      ,pname = window.location.pathname.split("/",3)
-      ,currentRoute = "/"+pname[2]
-      console.log(currentRoute)
+          ,pname = window.location.pathname.split("/",3)
+          ,currentRoute = "/"+pname[2]
+
+      const clear_state = (pntr) => {
+        for(let i=0;i<newBlockState.length;i++){
+          newBlockState[i].activity = false
+        }
+
+        newBlockState[pntr].activity = true
+        this.panelBlocks = newBlockState
+      }
+
       switch(currentRoute)
       {
         case '/user_management':
-          newBlockState[3].activity = true
-          this.panelBlocks = newBlockState 
+          clear_state(3)
           break;
         case '/exam_center_upload':
-          newBlockState[0].activity = true
-          this.panelBlocks = newBlockState
+          clear_state(0)
           break;
-        case '/exam_center_upload':
-          newBlockState[2].activity = true
-          this.panelBlocks = newBlockState
+        case '/exam_score_upload':
+          clear_state(2)
           break;
         case '/jamb_score_upload':
-          newBlockState[1].activity = true
-          this.panelBlocks = newBlockState
+          clear_state(1)
           break;
         case '/checkPayment_status':
-          newBlockState[4].activity = true
-          this.panelBlocks = newBlockState
+          clear_state(4)
           break;
         case '/change_password':
-          newBlockState[5].activity = true
-          this.panelBlocks = newBlockState
-          console.log(newBlockState)
+          clear_state(5)
           break;  
       }
 
