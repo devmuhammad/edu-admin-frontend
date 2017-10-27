@@ -3,7 +3,7 @@ import api from "../../api/DashboardAPI"
 let state = {
   applicantsperweek: [],
   appperweek_err: {},
-  chart_options:{
+  linechart_options:{
     scales: {
       yAxes: [{
         scaleLabel: { 'display': true, 'labelString': 'Total' },
@@ -27,16 +27,27 @@ let state = {
 let getters = {
   applicantsperweek: state => state.applicantsperweek,
   
-  chart_options: state => state.chart_options,
-  chartLabels: state => {
-    return state.applicantsperweek.map((state) => {
-      return state.weekid
-    })
+  linechart_options: state => state.linechart_options,
+  linechartLabels: state => {
+    try {
+      console.log(state.applicantsperweek)
+      return state.applicantsperweek.map((state) => {
+        return state.weekid
+      })
+    } catch (error) {
+      console.log(error)
+    }
+    
   },
-  chartData: state => {
-    return state.applicantsperweek.map((state) => {
-      return state.total
-    })
+  linechartData: state => {
+    try {
+      return state.applicantsperweek.map((state) => {
+        return state.total
+      })
+    } catch (error) {
+      console.log(error)
+    }
+    
   }
 }
 

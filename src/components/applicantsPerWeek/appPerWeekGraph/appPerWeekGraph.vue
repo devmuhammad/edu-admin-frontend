@@ -21,9 +21,9 @@ export default {
   computed:{
     isData() { return this.chartData.length > 0 && this.chartLabels.length > 0},
     ...mapGetters({
-      options:'chart_options',
-      chartLabels: 'chartLabels',
-      chartData: 'chartData'
+      options:'linechart_options',
+      chartLabels: 'linechartLabels',
+      chartData: 'linechartData'
     })
   },
   methods: { ...mapActions(["getAppPerWeek"]) },

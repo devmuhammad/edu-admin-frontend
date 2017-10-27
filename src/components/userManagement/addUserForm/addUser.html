@@ -1,0 +1,88 @@
+<div :class="{modal:true, 'is-active':isActive}">
+    <div class="modal-background"></div>
+    <div class="modal-content userManagementModal">
+      
+<div class="columns">
+<span class="column userManagerLogo">
+    <img src="../../../assets/img/logo.png"/>
+</span> 
+
+<span class="column">    
+        <h2 class="title is-6">Add New User</h2>
+      <div class="centerForm">
+      
+          <div class="field">
+          <p class="control ">
+              Full Name:
+              <input class="input" type="text" placeholder="John Mark" v-model="user.name">
+          </p>
+          </div>
+
+          <div class="field">
+            <p class="control ">
+                E-mail:
+                <input class="input" type="text" placeholder="john12@gmail.com" v-model="user.email">
+            </p>
+            </div>
+
+            <div class="field">
+            <p class="control ">
+                Password:
+                <input class="input" type="password" placeholder="*******" >
+            </p>
+            </div>
+
+            <div class="field">
+            <p class="control ">
+                Confirm Password:
+                <input class="input" type="password" placeholder="*******" >
+            </p>
+            </div>
+
+            <div class="box">
+            <div class="control is-grouped">
+                <p class="control">
+                    User Groups:
+                <label class="checkbox">
+                <input type="checkbox"/>
+                    Admin-Consultant
+                </label>
+                </p>
+            <p class="control">
+            <label class="checkbox">
+             <input type="checkbox"/>
+                Admin-School
+            </label>
+            </p>
+        <p class="control">
+            <label class="checkbox">
+             <input type="checkbox"/>
+             Report
+            </label>
+            </p>
+        <p class="control">
+            <label class="checkbox">
+            <input type="checkbox"/>
+             User
+            </label>
+             </p>
+</div>
+ </div>
+
+ <div class="field column">
+    <p class="control" style="float:right">
+    <button class="button is-primary" @click="createNew">
+            Add User
+    </button>
+    </p>
+        </div>
+        
+    
+</div>
+</span>
+    
+</div>    
+</div>
+<button class="modal-close is-large" aria-label="close" @click="closeModal"></button>
+</div>
+    

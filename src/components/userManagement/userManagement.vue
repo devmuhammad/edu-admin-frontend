@@ -3,8 +3,11 @@
 </template>
 
 <script>
+import userManagementTable from './userManagementTable/userManagementTable'
+
 export default {
-  name:"userManagement"
+  name:"userManagement",
+  components: {userManagementTable}
 }
 </script>
 

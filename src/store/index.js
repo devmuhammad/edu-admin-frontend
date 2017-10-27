@@ -4,6 +4,8 @@ import * as actions from './actions'
 import * as mutations from './mutations'
 import ExamCenter from './modules/exam_center'
 import Dashboard from './modules/dashboard'
+import linechart from './modules/linechart'
+import userManagement from './modules/usermanagement'
 
 Vue.use(Vuex)
 
@@ -12,6 +14,8 @@ export default new Vuex.Store({
   mutations,
   modules: {
     ExamCenter,
-    Dashboard
+    Dashboard,
+    linechart,
+    userManagement
   }
 })  
