@@ -13,7 +13,8 @@ export default {
     'lastlogin', 
     'checkbox', 
     'userid',
-    'isSelected'
+    'isSelected',
+    
   ],
 }
 </script>

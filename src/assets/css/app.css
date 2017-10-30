@@ -100,3 +100,14 @@ nav > .panel-heading{
     background-color: transparent;
     border: 1px solid #f0f0f0;
 }
+.userManagementModal{
+    background-color:#fff;
+    height: 700px;
+    width: 900px;
+    padding: 15px;
+    border-radius:5px
+}
+.userManagementLogo{
+    margin-top:200px;
+}
+

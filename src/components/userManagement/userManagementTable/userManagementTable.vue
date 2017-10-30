@@ -17,7 +17,8 @@ export default {
       openModal: false,
       loading : true,
       ec_checkboxes: [],
-      checkedlist: []
+      checkedlist: [],
+      
     }   
   },
   computed:{

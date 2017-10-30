@@ -19,6 +19,7 @@ import appByState from "@/components/applicantsByState/appByStateTable/appByStat
 import appByStateGraph from '@/components/applicantsByState/appByStateGraph/appByStateGraph'
 import appPerWeekGraph from '@/components/applicantsPerWeek/appPerWeekGraph/appPerWeekGraph'
 import appPerWeekTable from '@/components/applicantsPerWeek/appPerWeekTable/appPerWeekTable'
+import addUser from '@/components/userManagement/addUserForm/addUser'
 Vue.use(Router)
 
 export default new Router({
@@ -88,7 +89,13 @@ export default new Router({
         },
         {
           'path':'user_management',
-          'component':userMangement
+          'component':userMangement,
+          'children':[
+            {
+              'path':'adduser',
+              'component':addUser
+            }
+          ]
         },
         {
           'path':'checkPayment_status',
