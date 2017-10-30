@@ -5,6 +5,6 @@
 <script>
 export default {
   name:"pagination",
-  props: ["isCurrent", "lastPage", "disabled"]
+  props: ["lastPage", "disabled", "next", "prev", "f", "s", "t"]
 }
 </script>

@@ -1,19 +1,19 @@
 <nav class="pagination is-small" role="navigation" aria-label="pagination">
-  <a class="pagination-previous" title="This is the first page">Previous</a>
-  <a class="pagination-next">Next page</a>
+  <a class="pagination-previous" title="This is the first page" @click="prev">Previous</a>
+  <a class="pagination-next" @click="next">Next page</a>
   <ul class="pagination-list">
     <li>
-      <a :class="{'pagination-link':true, 'is-current':isCurrent}" aria-label="Page 1" aria-current="page">1</a>
+      <a :class="{'pagination-link':true, 'is-current':true}" aria-label="Page 1" aria-current="page">{{f}}</a>
     </li>
     <li>
-      <a :class="{'pagination-link':true, 'is-current':isCurrent}" aria-label="Goto page 2">2</a>
+      <a :class="{'pagination-link':true, 'is-current':false}" aria-label="Goto page 2">{{s}}</a>
     </li>
     <li>
-      <a :class="{'pagination-link':true, 'is-current':isCurrent}" aria-label="Goto page 3">3</a>
+      <a :class="{'pagination-link':true, 'is-current':false}" aria-label="Goto page 3">{{t}}</a>
     </li>
     <li><span class="pagination-ellipsis">&hellip;</span></li>
     <li>
-      <a :class="{'pagination-link':true, 'is-current':isCurrent}" aria-label="Goto last page">{{lastPage}}</a>
+      <a :class="{'pagination-link':true, 'is-current':false}" aria-label="Goto last page">{{lastPage}}</a>
     </li>
   </ul>
 </nav>

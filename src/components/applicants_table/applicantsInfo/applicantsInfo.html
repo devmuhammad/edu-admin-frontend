@@ -1,0 +1,19 @@
+
+<div :class="{modal:true, 'is-active':isActive}">
+    <div class="modal-background"></div>
+    <div class="modal-card infoModal">
+      <header class="modal-card-head">
+        <img src="../../../assets/img/logo.png" height="800" width="80"/>
+        <p class="modal-card-title">Applicant Information</p>
+        <button class="delete" aria-label="close" @click="closeModal"></button>
+      </header>
+      <section class="modal-card-body">
+        <personalInfo></personalInfo>
+        <infoTab></infoTab>
+        <router-view></router-view>
+      </section>
+      <footer class="modal-card-foot">
+        <button class="button is-danger" @click="closeModal">Close</button>
+      </footer>
+    </div>
+</div>

@@ -5,11 +5,17 @@
     <h3 class="subtitle is-5" style="color:#00923f">Applicants by faculty/department</h3> 
     
     <div class="pagntn columns">
-      <div class="column is-one-quarter"></div>
       <div class="column is-half">
-        <pagination :isCurrent = true :lastPage = 36 :disabled = null></pagination>
+        <pagination 
+          :lastPage=36 
+          :disabled=null 
+          :next="nextPage" 
+          :prev="prevPage"
+          :f="first"
+          :s="second"
+          :t="third"></pagination>
       </div> 
-      <div class="column is-one-quarter">
+      <div class="column">
         <div class="table_ctrl" style="width:70px">
           <span class="table_ctrl_item"><i class="fa fa-print"></i> Print</span>
         </div>

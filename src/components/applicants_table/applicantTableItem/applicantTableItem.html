@@ -1,7 +1,14 @@
+
 <tr>
-    <td>Saminu Jabaki</td>
+    <td class="applicantName" @click="isActive = true">Saminu Jabaki</td>
     <td>209817</td>
     <td>Jos</td>
     <td>129010HQ</td>
     <td>199</td>
+    
+    <applicantsInfo
+      :isActive="isActive"
+      :closeModal= "closeModal"
+    ></applicantsInfo>
 </tr>
+

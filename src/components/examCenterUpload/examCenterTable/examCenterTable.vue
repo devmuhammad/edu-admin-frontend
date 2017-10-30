@@ -10,7 +10,10 @@ import FadeLoader from "../../../../node_modules/vue-spinner/src/FadeLoader.vue"
 
 export default {
   name: "examCenterTable",
-  created: function () { return this.getExamCenters(0) },
+  created: async function () { await this.getExamCenters(0); return this.errorHandler },
+
+  beforeMount: function () {return this.errorHandler},
+
   data () {
     return {
       openModal: false,
@@ -19,9 +22,11 @@ export default {
       checkedlist: []
     }   
   },
+
   computed:{
     ...mapGetters([
-      'examcenters'
+      'examcenters',
+      'fetch_error'
     ]),
     selectAll: {
       get: function () {
@@ -40,10 +45,22 @@ export default {
         this.ec_checkboxes = ec_checkboxes;
         console.log(ec_checkboxes)
       }
+    },
+    errorHandler() {
+      for(let key in this.fetch_error) {
+        if(this.fetch_error.hasOwnProperty(key))
+          this.loading = false
+          return false;
+      }
+      return true;
     }
   },
+  
   methods:{
-    setAddModalActive () { return this.openModal = !this.openModal },
+    setAddModalActive () { 
+      this.getExamCenters(0);
+      return this.openModal = !this.openModal 
+    },
 
     isSelected (event) { 
       if(event.target.checked === true)
