@@ -19,11 +19,15 @@ import appByState from "@/components/applicantsByState/appByStateTable/appByStat
 import appByStateGraph from '@/components/applicantsByState/appByStateGraph/appByStateGraph'
 import appPerWeekGraph from '@/components/applicantsPerWeek/appPerWeekGraph/appPerWeekGraph'
 import appPerWeekTable from '@/components/applicantsPerWeek/appPerWeekTable/appPerWeekTable'
+<<<<<<< HEAD
+import addUser from '@/components/userManagement/addUserForm/addUser'
+=======
 import applicantSchool from "@/components/applicants_table/applicantsInfo/school/school"
 import applicantQualifications from "@/components/applicants_table/applicantsInfo/qualifications/qualifications"
 import applicantChoices from "@/components/applicants_table/applicantsInfo/choices/choices"
 import applicantDocuments from "@/components/applicants_table/applicantsInfo/documents/documents"
-import addUser from '@/components/userManagement/addUserForm/addUser'
+
+>>>>>>> edacac0c2f047eba8cebace2f9afff8691b6b29f
 Vue.use(Router)
 
 export default new Router({

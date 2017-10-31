@@ -1,21 +1,22 @@
 <tbody>
-<template v-for = "(fclty, index) in faculties"> 
+<template v-for = "(state, index) in states"> 
   <tr>
-    <td colspan="5"><strong>{{name}}</strong></td>
+    <td colspan="5"><strong style="color:#da251c">{{state.state}}</strong></td>
   </tr>  
 
-  <tr>   
-    <td colspan="5"><strong>{{fclty.name}}</strong></td>
-  </tr>
-  <tr  v-for = "(dept, index) in fclty.departments">  
-    <template>
-      <td></td>
-      <td>{{dept.name}}</td>
-      <td>{{dept.male}}</td>
-      <td>{{dept.female}}</td>
-      <td> {{dept.total}}</td>
-    </template>  
-  </tr>  
+  <template v-for = "(fclty, index) in state.faculties">
+    <tr>   
+      <td colspan="5" @click="toggleDept"><strong>{{fclty.name}}</strong></td>
+    </tr>
 
-</template>
+    <tr v-for = "(dept, index) in fclty.departments">
+        <td></td>
+        <td>{{dept.name}}</td>
+        <td>{{dept.male}}</td>
+        <td>{{dept.female}}</td>
+        <td>{{dept.total}}</td>
+    </tr>     
+  </template>
+
+</template>  
 </tbody>

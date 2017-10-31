@@ -5,7 +5,7 @@ export default {
       const res = () => {
         return new Promise ((resolve, reject) => {
           HTTP.post('add/examcenter/', examcenter)
-          .then(response => { resolve(response.data) })
+          .then(response => { resolve(response) })
           .catch(e => { reject(e) })
         })
       }

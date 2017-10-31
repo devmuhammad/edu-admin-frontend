@@ -62,6 +62,14 @@
 </addCenter>
 </span>
 
+<span class="columns" v-else-if="errorHandler === false">
+  <span class="column"></span>
+
+  <span class="column">
+    {{fetch_error.error}}
+  </span>
+</span>
+
 <span class="columns" v-else>
     <span class="column"></span>
     <span class="column" style="margin-top:200px;padding-bottom:200px">

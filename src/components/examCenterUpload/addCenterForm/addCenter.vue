@@ -3,7 +3,8 @@
 </template>
 
 <script>
-import {mapState, mapActions} from "vuex"
+import {mapGetters, mapActions} from "vuex"
+import FadeLoader from "../../../../node_modules/vue-spinner/src/FadeLoader.vue"
 
 export default {
   name:"addCenter",
@@ -11,19 +12,27 @@ export default {
   mounted: function () { return this.getStates() },
   data () {
     return {
-      examcenter: {capacity: 0, stateid: 4, description: '' }
+      examcenter: {capacity: 0, stateid: 4, description: '' },
+      loading:true
     }
   },
   computed:{
-    ...mapState([ "states"])
+    ...mapGetters({ 
+      response_status:"create_status"
+    })
   },
   methods: {
-    ...mapActions([
-      "getStates",
-      "createNewCenter"
-    ]),
-    createNew(){ return this.createNewCenter(this.examcenter) }
-  }
+    ...mapActions([ "getStates","createNewCenter" ]),
+
+    createNew(){ 
+      return this.createNewCenter(this.examcenter)  
+    },
+
+    clear(){
+      return this.$store.commit("clearStatusLog")
+    }
+  },
+  components:{FadeLoader}
 }
 </script>
 

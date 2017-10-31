@@ -100,34 +100,3 @@ nav > .panel-heading{
     background-color: transparent;
     border: 1px solid #f0f0f0;
 }
-.userManagementModal{
-    background-color:#fff;
-    height: 700px;
-    width: 900px;
-    padding: 15px;
-    border-radius:5px
-}
-.userManagementLogo{
-    margin-top:200px;
-}
-
-
-.pagntn{
-    margin-bottom: -150px
-}
-
-.applicantName{
-    cursor: pointer;
-}
-
-.info_id{
-    color:#666;
-}
-
-.info_{
-    color: #00923f
-}
-
-.infoModal{
-    width:1040px
-}

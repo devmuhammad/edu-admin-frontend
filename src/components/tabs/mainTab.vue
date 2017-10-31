@@ -30,10 +30,6 @@ export default {
         case '/applications':
           newState.applications_active = true;
           this.currentState = newState
-          break;  
-        case '/reports':
-          newState.reports_active = true;
-          this.currentState = newState
           break;
         case '/admin':
           newState.admin_active = true;
