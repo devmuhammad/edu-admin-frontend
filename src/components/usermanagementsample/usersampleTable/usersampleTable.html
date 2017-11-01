@@ -1,0 +1,56 @@
+<div class="user_sampletable"> 
+    <span class="columns">
+        <span class="column is-one-quarter"></span>
+<span class="column"><h2 class="title is-4">User Management</h2></span>
+<span class="column is-one-quarter">
+        </span>
+</span>  
+    <div class="table_ctrl">
+        
+        <a 
+            @click = "setAddModalActive"
+            class="table_ctrl_item">
+            <i class="fa fa-plus"></i>
+        </a>
+        <a
+            @click = "setUpdateModalActive"
+            class="table_ctrl_item">
+            <i class="fa fa-edit"></i>
+        </a>
+        <a
+            @click = "deleteUser"
+            class="table_ctrl_item">
+            <i class="fa fa-trash"></i>
+        </a>
+    </div>
+<table class="table is-fullwidth is-bordered is-striped is-narrow">
+    <thead>
+      <tr>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Date Created</th>
+          <th>Last Login</th>
+      </tr>
+    </thead>
+    <tbody> 
+        <usersampleTableItem 
+          v-for="(user, index) in users" 
+          :users="users" 
+          :key="index"
+        >
+        </usersampleTableItem>
+    </tbody>
+</table>  
+
+<addUser
+:isActive="openModal"
+:closeModal = "setAddModalActive"
+>
+</addUser>
+<updateUser
+:isActive="openModal"
+:closeModal = "setUpdateModalActive"
+>
+</updateUser>
+</div>    

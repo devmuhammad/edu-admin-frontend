@@ -1,0 +1,79 @@
+<div class="user_management_table">
+  <span class="columns">
+            <span class="column is-one-quarter"></span>
+  <span class="column"><h2 class="title is-4">User Management</h2></span>
+  <span class="column is-one-quarter">
+            </span>
+  </span>
+
+  <span v-if="userslist.length > 0">
+                <div class="table_ctrl">
+                    
+                    <a 
+                        @click = "setAddModalActive"
+                        class="table_ctrl_item">
+                        <i class="fa fa-plus"></i>
+                    </a>
+                    <router-link 
+                        @click = "setUpdateModalActive"
+                        class="table_ctrl_item">
+                        <i class="fa fa-edit"></i>
+                    </router-link>
+                    <a
+                        @click = "deleteUser"
+                        class="table_ctrl_item">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </div>
+                <table class="table is-fullwidth is-bordered is-striped is-narrow">
+                        <thead>
+                          <tr>
+                            <th><input type="checkbox" v-model="selectAll"/></th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Date Created</th>
+                            <th>Last Login</th>
+                          </tr>
+                        </thead>
+                        <tbody> 
+                                <userManagementTableItem 
+                                  v-for="(user, index) in userslist" 
+                                  :key="index"
+                                  :fullname="user.name"
+                                  :useremail = "user.email"
+                                  :userphone = "user.phone"
+                                  :datecreated = "user.datecreated"
+                                  :lastlogin = "user.lastlogin"
+                                  :checkbox = "ec_checkboxes"
+                                  :userid = "user.userid"
+                                  :isSelected = "isSelected" 
+                                  :users = "users"
+                                >
+                                </userManagementTableItem>
+                            </tbody>
+                        </table>   
+        <addUser
+            :isActive="openModal"
+            :closeModal = "setAddModalActive"
+        >
+        </addUser>
+        <updateUser
+            :isActive="openModal"
+            :closeModal = "setUpdateModalActive"
+        >
+        </updateUser>
+
+    </span>
+    
+    <span class="columns" v-else>
+        <span class="column"></span>
+        <span class="column" style="margin-top:200px;padding-bottom:200px">
+            <FadeLoader
+              :loading = "loading"  
+              color="#da251c"
+              size="20px"
+            ></FadeLoader>
+        </span>
+    </span>
+    </div>           

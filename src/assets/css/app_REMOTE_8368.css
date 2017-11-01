@@ -121,6 +121,7 @@ nav > .panel-heading{
     width:840px;
     height: 100%;
 } 
+
 .userManagementModal{
     background-color:#fff;
     height: 700px;
@@ -131,4 +132,3 @@ nav > .panel-heading{
 .userManagementLogo{
     margin-top:200px;
 }
-
