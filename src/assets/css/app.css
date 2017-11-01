@@ -17,7 +17,7 @@
 }
 
 .box{
-    background-color: ghostwhite;
+    background-color: transparent;
 }
 
 .index{
@@ -87,7 +87,6 @@ nav > .panel-heading{
 .ExamCenterModal{
     background-color:#fff;
     height:400px;
-    width:800px;
     padding:50px;
     border-radius:5px
 }
@@ -118,5 +117,7 @@ nav > .panel-heading{
 }
 
 .infoModal{
-    width:1040px
+    position: relative;
+    width:840px;
+    height: 100%;
 }

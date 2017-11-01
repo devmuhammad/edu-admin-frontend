@@ -107,7 +107,6 @@ export default new Router({
     },
     {
       path: '/applications',
-      name: 'Applications',
       component: Applications,
       children:[
         {

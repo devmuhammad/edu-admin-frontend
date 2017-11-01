@@ -17,7 +17,8 @@ $panel-block-active-color: #da251c;
 $panel-block-active-icon-color:#da251c;
 $panel-block-active-border-left-color:#da251c;
 $modal-card-title-color:#00923f;
-$modal-content-width:1040px;
+//$modal-content-width:1040px;
+$modal-card-head-padding:5px;
 //$family-primary: $family-serif;
 
 @import "../node_modules/bulma/bulma.sass";

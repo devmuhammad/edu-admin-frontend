@@ -1,15 +1,15 @@
 <div class="tabs is-centered is-boxed">
     <ul>
-      <li class="is-active">
+      <li :class="{'is-active':currentState.isSchoolActive}"  @click="checkPresentRoute">
         <router-link to="/applications">Schools</router-link>
       </li>
-      <li>
+      <li :class="{'is-active':currentState.isQualificationsActive}" @click="checkPresentRoute">
         <router-link to="/qualifications">Qualifications</router-link>
       </li>
-      <li>
+      <li :class="{'is-active':currentState.isChoicesActive}" @click="checkPresentRoute">
         <router-link to="/choices">Preffered choices</router-link>
       </li>
-      <li>
+      <li :class="{'is-active':currentState.isDocsActive}" @click="checkPresentRoute">
         <router-link to="/documents">Documents</router-link>
       </li>
     </ul>

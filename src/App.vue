@@ -5,7 +5,7 @@
       <div class="container">
         <userInfo/>
         <mainTab/>
-        <span class="card"
+        <span class="card">
           <router-view/>
         </span>
       </div>
@@ -24,6 +24,6 @@ export default {
 }
 </script>
 
-<style src="./assets/css/app.css"></style>
 <style rel="stylesheet" src="./assets/css/font-awesome.min.css"></style>
 <style lang="sass"> @import "./assets/sass/app.scss"; </style>
+<style src="./assets/css/app.css"></style>
