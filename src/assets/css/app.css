@@ -132,3 +132,11 @@ nav > .panel-heading{
     margin-top:200px;
 }
 
+.panel > div > .is-active{
+    background-color: #FFF;
+    font-weight: 600;
+}
+
+.panel{
+    background-color: ghostwhite;
+}
