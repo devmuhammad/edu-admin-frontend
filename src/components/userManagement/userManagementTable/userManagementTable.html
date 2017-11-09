@@ -6,7 +6,7 @@
             </span>
   </span>
 
-  <span v-if="userslist.length > 0">
+  <span v-if="userslist">
                 <div class="table_ctrl">
                     
                     <a 
@@ -14,11 +14,11 @@
                         class="table_ctrl_item">
                         <i class="fa fa-plus"></i>
                     </a>
-                    <router-link 
+                    <a 
                         @click = "setUpdateModalActive"
                         class="table_ctrl_item">
                         <i class="fa fa-edit"></i>
-                    </router-link>
+                    </a>
                     <a
                         @click = "deleteUser"
                         class="table_ctrl_item">
@@ -40,15 +40,15 @@
                                 <userManagementTableItem 
                                   v-for="(user, index) in userslist" 
                                   :key="index"
-                                  :fullname="user.name"
-                                  :useremail = "user.email"
-                                  :userphone = "user.phone"
+                                  :fullname="user.fullname"
+                                  :emailaddress = "user.emailaddress"
+                                  :phonenumber = "user.phonenumber"
                                   :datecreated = "user.datecreated"
                                   :lastlogin = "user.lastlogin"
                                   :checkbox = "ec_checkboxes"
                                   :userid = "user.userid"
                                   :isSelected = "isSelected" 
-                                  :users = "users"
+                                  
                                 >
                                 </userManagementTableItem>
                             </tbody>
@@ -59,7 +59,7 @@
         >
         </addUser>
         <updateUser
-            :isActive="openModal"
+            :isActive="openupdateModal"
             :closeModal = "setUpdateModalActive"
         >
         </updateUser>

@@ -24,6 +24,8 @@ import applicantQualifications from "@/components/applicants_table/applicantsInf
 import applicantChoices from "@/components/applicants_table/applicantsInfo/choices/choices"
 import applicantDocuments from "@/components/applicants_table/applicantsInfo/documents/documents"
 import addUser from '@/components/userManagement/addUserForm/addUser'
+import login from '@/components/login/login'
+
 Vue.use(Router)
 
 export default new Router({
@@ -33,6 +35,11 @@ export default new Router({
       path: '/DDJCLJCK',
       name: 'Index',
       component: Index
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: login
     },
     {
       path: '/',

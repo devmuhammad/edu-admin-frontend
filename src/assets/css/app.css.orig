@@ -100,11 +100,10 @@ nav > .panel-heading{
     background-color: transparent;
     border: 1px solid #f0f0f0;
 }
-<<<<<<< HEAD
 .userManagementModal{
     background-color:#fff;
     height: 700px;
-    width: 900px;
+    width: 500px;
     padding: 15px;
     border-radius:5px
 }
@@ -112,7 +111,6 @@ nav > .panel-heading{
     margin-top:200px;
 }
 
-=======
 
 .pagntn{
     margin-bottom: -150px
@@ -133,4 +131,3 @@ nav > .panel-heading{
 .infoModal{
     width:1040px
 }
->>>>>>> edacac0c2f047eba8cebace2f9afff8691b6b29f

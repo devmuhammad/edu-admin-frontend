@@ -5,7 +5,7 @@ export default {
       const res = () => {
         return new Promise ((resolve, reject) => {
           HTTP.post('add/user/', user)
-          .then(response => { resolve(response.data) })
+          .then(response => { resolve(response) })
           .catch(e => { reject(e) })
         })
       }
@@ -49,10 +49,10 @@ export default {
       return await res()
     },
 
-    GET_USERS: async (userslist) => {
+    GET_USERS: async () => {
       const res = () => {
         return new Promise((resolve, reject) => {
-          HTTP.post(`user?=` + userslist)
+          HTTP.post(`/userprofile` )
           .then((response) => { resolve(response.data)  })
           .catch(e => { console.log(e); reject(e) })
         })

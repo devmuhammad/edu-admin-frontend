@@ -7,8 +7,8 @@ export default {
   name:"userManagementTableItem",
   props:[
     'fullname',
-    'useremail',
-    'userphone',
+    'emailaddress',
+    'phonenumber',
     'datecreated',
     'lastlogin', 
     'checkbox', 

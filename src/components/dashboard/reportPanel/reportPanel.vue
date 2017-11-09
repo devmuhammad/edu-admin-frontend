@@ -13,7 +13,7 @@ export default {
     data() {
         return {
         applicationstatus :{
-            id: 0,
+            
         appregistered: 0,
         appcompleted: 0,
         paid: 0
@@ -23,13 +23,26 @@ export default {
     },
     methods: {
         getApplicationRegisterandFill(){
-            HTTP.get(`register/`, this.applicationstatus)
+            const res = []
+            HTTP.get(`register/`)
             .then(response => {
-                this.applicationstatus = response.data
-                //  this.appregistered = response.data.appregistered
-                //  this.appcompleted = response.data.appcompleted
-                //  this.paid = response.data.paid
-
+               let res = response.data
+                console.log(res)
+            for (let i=0; i < res.length; i++)
+            {
+                let cursor = res[i] 
+                if (cursor.description_one == "Paid"){
+                    this.applicationstatus.paid = cursor.total
+                }
+                else if (cursor.description_one == "Filled"){
+                    this.applicationstatus.appcompleted = cursor.total
+                }
+                else if (cursor.description_one == "Registered"){
+                    this.applicationstatus.appregistered = cursor.total
+                }
+                
+            }
+        
             })
             
             .catch(e => {

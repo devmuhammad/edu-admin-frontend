@@ -103,7 +103,7 @@ nav > .panel-heading{
 .userManagementModal{
     background-color:#fff;
     height: 700px;
-    width: 900px;
+    width: 700px;
     padding: 15px;
     border-radius:5px
 }
@@ -131,3 +131,15 @@ nav > .panel-heading{
 .infoModal{
     width:1040px
 }
+.hero-banner .hero {
+    background: url('../img/loginbg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
+  }
+  
+  .hero-banner .title {
+    display: inline-block;
+    background-color: rgba(0,0,0, 0.6);
+    padding: 5px;
+  }

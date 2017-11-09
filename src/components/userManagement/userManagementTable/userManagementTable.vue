@@ -15,6 +15,7 @@ export default {
   data () {
     return {
       openModal: false,
+      openupdateModal: false,
       loading : true,
       ec_checkboxes: [],
       checkedlist: [],
@@ -46,7 +47,7 @@ export default {
   },
   methods:{
     setAddModalActive () { return this.openModal = !this.openModal },
-    setUpdateModalActive () { return this.openModal = !this.openModal },
+    setUpdateModalActive () { return this.openupdateModal = !this.openupdateModal },
 
     isSelected (event) { 
       if(event.target.checked === true)
@@ -61,6 +62,7 @@ export default {
     },
 
     deleteUser () { return this.DeleteUser(this.checkedlist[0])},
+    
 
     ...mapActions([
       "getUsers",
