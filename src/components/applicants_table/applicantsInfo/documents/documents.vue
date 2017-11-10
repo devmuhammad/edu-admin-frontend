@@ -4,6 +4,7 @@
 
 <script>
 export default {
-  name:"documents"
+  name:"documents",
+  props:['appDocs']
 }
 </script>

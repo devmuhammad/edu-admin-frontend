@@ -1,3 +1,21 @@
-<div>
-  <h2>Documents to be displayed here</h2>
+<div class="columns">
+  <div class="column is-pulled-left is-half">
+      <h2><strong>Uploaded documents</strong></h2>
+      <ol>
+        <li v-if="appDocs === undefined">
+          <strong style="color:#da251c"><i class="fa fa-warning"></i> Document not available for preview</strong>
+        </li>
+        <li v-else v-for="(doc,index) in appDocs" :key="index">
+          {{doc.doctype}}
+        </li>
+      </ol>
+  </div>
+  
+  <div class="column is-pulled-right is-half">
+    <h2><strong>Preview</strong></h2>
+    <template v-for="(doc,index) in appDocs">
+        <img alt="applicant document" :src="'https://s3.amazonaws.com/comsoftltd.net/nda69thregular/otherdoc'+doc.dockname"/>
+    </template>
+  </div>
+
 </div>

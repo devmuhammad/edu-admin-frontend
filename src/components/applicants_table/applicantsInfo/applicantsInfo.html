@@ -3,14 +3,33 @@
     <div class="modal-background"></div>
     <div class="modal-card infoModal">
       <header class="modal-card-head">
-        <personalInfo></personalInfo>
+        <personalInfo 
+          :appRegno="appRegno"
+          :appName ="appName"
+          :appState="appState"
+          :appLga="appLga"
+          :appPhone="appPhone"
+          :appQualification="appQualification"
+          :appFchoice="appFchoice"
+          :appSchoice="appSchoice"
+          :appPhoto="appPhoto">
+        </personalInfo>
         
       </header>
+
       <section class="modal-card-body">
-        
-        <infoTab></infoTab>
-        <router-view></router-view>
+        <infoTab :dcount="appDocs"></infoTab>
+        <qualifications 
+          :style="{display:displayQualifications}"
+          :appQualification="sortQualification">
+        </qualifications>
+
+        <documents 
+          :style="{display:displayDocs}"
+          :appDocs="appDocs">
+        </documents>
       </section>
+
       <footer class="modal-card-foot">
         <button class="button is-danger" @click="closeModal">Close</button>
       </footer>

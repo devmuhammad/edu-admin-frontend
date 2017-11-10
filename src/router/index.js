@@ -19,9 +19,7 @@ import appByState from "@/components/applicantsByState/appByStateTable/appByStat
 import appByStateGraph from '@/components/applicantsByState/appByStateGraph/appByStateGraph'
 import appPerWeekGraph from '@/components/applicantsPerWeek/appPerWeekGraph/appPerWeekGraph'
 import appPerWeekTable from '@/components/applicantsPerWeek/appPerWeekTable/appPerWeekTable'
-import applicantSchool from "@/components/applicants_table/applicantsInfo/school/school"
 import applicantQualifications from "@/components/applicants_table/applicantsInfo/qualifications/qualifications"
-import applicantChoices from "@/components/applicants_table/applicantsInfo/choices/choices"
 import applicantDocuments from "@/components/applicants_table/applicantsInfo/documents/documents"
 import addUser from '@/components/userManagement/addUserForm/addUser'
 Vue.use(Router)
@@ -116,16 +114,9 @@ export default new Router({
       component: Applications,
       children:[
         {
-          path:"/",
-          component:applicantSchool
-        },
-        {
-          path:"/choices",
-          component:applicantChoices
-        },
-        {
-          path:"/qualifications",
-          component:applicantQualifications
+          path:"/:qlist",
+          component:applicantQualifications,
+          props:true
         },
         {
           path:"/documents",

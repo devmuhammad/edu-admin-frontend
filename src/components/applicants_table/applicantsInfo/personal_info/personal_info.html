@@ -2,7 +2,12 @@
   <div class="card-content">
     <p class="columns">
       <span class="column is-one-quarter">
-        <img alt="applicant passport"/>
+        <img 
+          alt="applicant passport" 
+          :src="'https://s3.amazonaws.com/comsoftltd.net/nda69thregular/passport/'+appPhoto"
+          height="120"
+          width="120"
+        />
       </span>
       
       <span class="column">
@@ -10,31 +15,42 @@
         <p>
           <strong>
             <span class="info_id">Name:</span>  
-            <span class="info_">Abdullahi Umar Mohammed</span>
+            <small class="info_">{{appName}}</small>
           </strong> 
         </p><br/>
 
         <p>
           <strong>
             <span style="float:left" class="info_id">State:</span> 
-            <span class="info_" style="margin-right:20px"> Niger </span>
-            <span class="info_id">LGA:</span> <span class="info_">Bida</span>
+            <small class="info_"> {{appState}} </small>
+            
           </strong>
+        </p><br/>
+
+        <p>
+          <strong>
+            <span class="info_id">LGA:</span> <small class="info_">{{appLga}}</small>
+          </strong> 
         </p>
+
         </div>
 
         <div style="float:right">
         <p>
           <strong>
-            <span class="info_id">Choice of service:</span> 
-            <span class="info_">Army</span>
+            <span class="info_id">Choices:</span> 
+            <small class="info_">
+              Nigerian 
+              <span>{{appFirstchoice}} /</span>
+              <span>{{appSecondchoice}}</span>
+            </small>
           </strong>
         </p><br/>
 
         <p>
           <strong>
             <span class="info_id">Phone number:</span> 
-            <span class="info_">08139130000</span>
+            <small class="info_">{{appPhone}}</small>
           </strong>
         </p>
         </div>

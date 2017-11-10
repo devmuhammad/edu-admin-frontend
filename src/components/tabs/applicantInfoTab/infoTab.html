@@ -1,16 +1,14 @@
 <div class="tabs is-centered is-boxed">
     <ul>
-      <li :class="{'is-active':currentState.isSchoolActive}"  @click="checkPresentRoute">
-        <router-link to="/applications">Schools</router-link>
-      </li>
       <li :class="{'is-active':currentState.isQualificationsActive}" @click="checkPresentRoute">
-        <router-link to="/qualifications">Qualifications</router-link>
-      </li>
-      <li :class="{'is-active':currentState.isChoicesActive}" @click="checkPresentRoute">
-        <router-link to="/choices">Preffered choices</router-link>
+        <router-link to="/applications">Qualifications</router-link>
       </li>
       <li :class="{'is-active':currentState.isDocsActive}" @click="checkPresentRoute">
-        <router-link to="/documents">Documents</router-link>
+        <router-link to="/documents">
+          <span>Documents &nbsp</span>
+          <span class="tag is-rounded" v-if="dcount != undefined"><strong>{{dcount.length}}</strong></span>
+          <span class="tag is-rounded" v-else>0</span>
+        </router-link>
       </li>
     </ul>
 </div>

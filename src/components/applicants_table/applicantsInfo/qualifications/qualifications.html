@@ -1,3 +1,58 @@
-<div>
-  <h2>Qualifications displayed here</h2>
+<div class="columns">
+  <div class="column is-pulled-left is-half">
+    <small>
+      <p>{{appQualification.fs.examtype}} <span>{{appQualification.fs.year}}</span></p>
+      <p>{{appQualification.fs.examcenter}}</p>
+    </small>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(subject, index) in appQualification.fs.subjects">
+          <td>{{subject.subject}}</td>
+          <td>{{subject.grade}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="column is-pulled-right is-half">
+
+    <div v-if="appQualification.ss.subjects.length > 0">
+      <small>
+        <p>{{appQualification.ss.examtype}} <span>{{appQualification.ss.year}}</span></p>
+        <p>{{appQualification.ss.examcenter}}</p>
+      </small>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Grade</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(subject, index) in appQualification.ss.subjects">
+            <td>{{subject.subject}}</td>
+            <td>{{subject.grade}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div v-else class="ssitting">
+      <span><i class="fa fa-warning fa-4x"></i></span>
+      <div>
+        <strong>Second sitting not available</strong>
+      </div>
+    </div>
+
+  </div>
+
 </div>
+
+

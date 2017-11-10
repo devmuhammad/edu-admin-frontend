@@ -4,6 +4,7 @@
 
 <script>
 export default {
-  name:"qualifications"
+  name:"qualifications",
+  props:['appQualification']
 }
 </script>
