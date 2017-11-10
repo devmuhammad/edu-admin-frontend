@@ -27,7 +27,7 @@ export default {
             HTTP.get(`register/`)
             .then(response => {
                let res = response.data
-                console.log(res)
+                // console.log(res)
             for (let i=0; i < res.length; i++)
             {
                 let cursor = res[i] 

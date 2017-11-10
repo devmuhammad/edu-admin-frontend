@@ -73,9 +73,13 @@ export default {
     validateBeforeSubmit() {
       this.$validator
         .validateAll()
-        
-        .then(function(response) {
-          console.log(response)
+        .then((result) => {
+        if(!result){
+        alert('error');
+          return;
+        }
+        alert('success');
+          
           // Validation success if response === true
         })
         .catch(function(e) {
