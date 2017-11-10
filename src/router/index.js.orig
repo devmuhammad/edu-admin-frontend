@@ -27,7 +27,7 @@ import applicantQualifications from "@/components/applicants_table/applicantsInf
 import applicantChoices from "@/components/applicants_table/applicantsInfo/choices/choices"
 import applicantDocuments from "@/components/applicants_table/applicantsInfo/documents/documents"
 
->>>>>>> edacac0c2f047eba8cebace2f9afff8691b6b29f
+
 Vue.use(Router)
 
 export default new Router({

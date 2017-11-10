@@ -13,11 +13,12 @@ $warning: #fff500;
 $tabs-boxed-link-active-background-color: #00923f;
 $tabs-link-active-color:#fff;
 $navbar-item-hover-background-color:transparent;
-$panel-block-active-color: #da251c;
-$panel-block-active-icon-color:#da251c;
-$panel-block-active-border-left-color:#da251c;
+$panel-block-active-color: #93ad5d;
+$panel-block-active-icon-color:#93ad5d;
+$panel-block-active-border-left-color:#93ad5d;
 $modal-card-title-color:#00923f;
-$modal-content-width:1040px;
+//$modal-content-width:1040px;
+$modal-card-head-padding:5px;
 //$family-primary: $family-serif;
 
 @import "../node_modules/bulma/bulma.sass";

@@ -19,12 +19,14 @@ import appByState from "@/components/applicantsByState/appByStateTable/appByStat
 import appByStateGraph from '@/components/applicantsByState/appByStateGraph/appByStateGraph'
 import appPerWeekGraph from '@/components/applicantsPerWeek/appPerWeekGraph/appPerWeekGraph'
 import appPerWeekTable from '@/components/applicantsPerWeek/appPerWeekTable/appPerWeekTable'
+<<<<<<<<< Temporary merge branch 1
 import applicantSchool from "@/components/applicants_table/applicantsInfo/school/school"
 import applicantQualifications from "@/components/applicants_table/applicantsInfo/qualifications/qualifications"
 import applicantChoices from "@/components/applicants_table/applicantsInfo/choices/choices"
 import applicantDocuments from "@/components/applicants_table/applicantsInfo/documents/documents"
 import addUser from '@/components/userManagement/addUserForm/addUser'
 import login from '@/components/login/login'
+
 
 Vue.use(Router)
 

@@ -87,7 +87,6 @@ nav > .panel-heading{
 .ExamCenterModal{
     background-color:#fff;
     height:400px;
-    width:800px;
     padding:50px;
     border-radius:5px
 }
@@ -100,17 +99,7 @@ nav > .panel-heading{
     background-color: transparent;
     border: 1px solid #f0f0f0;
 }
-.userManagementModal{
-    background-color:#fff;
-    height: 700px;
-    width: 500px;
-    padding: 15px;
-    border-radius:5px
-}
-.userManagementLogo{
-    margin-top:200px;
-}
-
+<<<<<<< HEAD
 
 .pagntn{
     margin-bottom: -150px
@@ -132,8 +121,8 @@ nav > .panel-heading{
     position: relative;
     width:840px;
     height: 100%;
-} 
-
+}
+=======
 .userManagementModal{
     background-color:#fff;
     height: 700px;
@@ -145,3 +134,4 @@ nav > .panel-heading{
     margin-top:200px;
 }
 
+>>>>>>> c8b50a3d846cecf552cc96baa042df7c27905039

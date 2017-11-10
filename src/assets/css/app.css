@@ -17,7 +17,7 @@
 }
 
 .box{
-    background-color: ghostwhite;
+    background-color: transparent;
 }
 
 .index{
@@ -129,7 +129,11 @@ nav > .panel-heading{
 }
 
 .infoModal{
-    width:1040px
+    position: relative;
+    width:840px;
+    height: 100%;
+} 
+
 }
 .hero-banner .hero {
     background: url('../img/loginbg.jpg');
@@ -143,3 +147,18 @@ nav > .panel-heading{
     background-color: rgba(0,0,0, 0.6);
     padding: 5px;
   }
+
+.panel > div > .is-active{
+    background-color: #FFF;
+    font-weight: 600;
+}
+
+.panel{
+    background-color: ghostwhite;
+}
+
+.ssitting{
+    margin:100px 10px 10px 10px;
+    text-align:center;
+    color:#fff500;
+}

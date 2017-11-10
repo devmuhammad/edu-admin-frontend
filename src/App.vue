@@ -5,7 +5,7 @@
       <div class="container">
         <userInfo/>
         <mainTab/>
-        <span class="card"
+        <span class="card">
           <router-view/>
         </span>
       </div>

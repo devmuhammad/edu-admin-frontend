@@ -6,6 +6,7 @@ import ExamCenter from './modules/exam_center'
 import Dashboard from './modules/dashboard'
 import linechart from './modules/linechart'
 import userManagement from './modules/usermanagement'
+import Applicants from './modules/applicants'
 
 Vue.use(Vuex)
 
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     ExamCenter,
     Dashboard,
     linechart,
-    userManagement
+    userManagement,
+    Applicants
   }
 })  
