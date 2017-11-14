@@ -5,7 +5,7 @@
 <script>
 import userManagementTableItem from "../userManagementTableItem/userManagementTableItem";
 import addUser from "../addUserForm/addUser"
-import updateUser from "../updateUserForm/updateUser"
+// import updateUser from "../updateUserForm/updateUser"
 import {mapActions, mapState, mapGetters} from "vuex"
 import FadeLoader from "../../../../node_modules/vue-spinner/src/FadeLoader.vue"
 
@@ -15,7 +15,7 @@ export default {
   data () {
     return {
       openModal: false,
-      openupdateModal: false,
+      
       loading : true,
       ec_checkboxes: [],
       checkedlist: [],
@@ -47,7 +47,7 @@ export default {
   },
   methods:{
     setAddModalActive () { return this.openModal = !this.openModal },
-    setUpdateModalActive () { return this.openupdateModal = !this.openupdateModal },
+    // setUpdateModalActive () { return this.openupdateModal = !this.openupdateModal },
 
     isSelected (event) { 
       if(event.target.checked === true)
@@ -70,7 +70,7 @@ export default {
       
     ])
   },
-  components:{userManagementTableItem, addUser,updateUser, FadeLoader}
+  components:{userManagementTableItem, addUser, FadeLoader}
 }
 
 </script>

@@ -37,30 +37,46 @@
                 <div class="columns">
                   <div class="column is-8 is-offset-2">
                         
-                    <div class="login-form">
+                    <div class="login-form" v-if="response_status == undefined">
                       <p class="control has-icon has-icon-right">
-                        <input class="input email-input" type="text" placeholder="bala@example.com">
+                        <input class="input email-input" type="text" placeholder="ola@gmail.com" v-model="user.userid">
                         <span class="icon user" style="font-size:15px">
                           <i class="fa fa-user"></i>
                         </span>
                       </p>
                       <p class="control has-icon has-icon-right">
-                        <input class="input password-input" type="password" placeholder="●●●●●●●">
+                        <input class="input password-input" type="password" placeholder="●●●●●●●" v-model="user.password">
                         <span class="icon user" style="font-size:15px">
                           <i class="fa fa-lock"></i>
                         </span>
                       </p>
                       <p class="control login">
-                        <button class="button is-success is-outlined is-large is-fullwidth">Login</button>
+                        <button class="button is-success is-outlined is-large is-fullwidth" @click ="login">Login</button>
                       </p>
                     </div>
-                    <div class="section forgot-password ">
+                    
+                    
+                    <div v-else-if="response_status == 200">
+                    
+                    </div>
+                    <div class= "columns" v-else>
+                        <span class="column"></span>
+                        <span class="column" style="margin-top:100px;padding-bottom:100px">
+                            <FadeLoader
+                                :loading = "loading"  
+                                color="#da251c"
+                                size="20px"
+                            ></FadeLoader>
+                          </span>
+                        </div>
+                  
+                  <div class="section forgot-password ">
                       <p class="has-text-centered" style="font-size:12px" >
                         <a href="#">Forgot password</a>
                         <a href="#">Need help?</a>
                       </p>
-                    </div>
-                  </div>
+                                      </div>
+                                    </div>
                 </div>
               </div>
             </div>

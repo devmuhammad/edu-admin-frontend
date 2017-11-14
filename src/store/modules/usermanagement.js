@@ -7,13 +7,17 @@ let state = {
     get_error: {},
     create_error:{},
     create_userstatus:undefined,
+    create_updatestatus:undefined,
+    create_passwordstatus:undefined,
     delete_error:{},
     }
   
   const getters = {
     userslist : state => state.userslist,
     get_error : state => state.get_error,
-    create_userstatus: state => state.create_userstatus
+    create_userstatus: state => state.create_userstatus,
+    create_updatestatus: state => state.create_updatestatus,
+    create_passwordstatus: state => state.create_passwordstatus
   }
 
   const mutations = {
@@ -51,13 +55,40 @@ let state = {
   },
     
 
-      updateUser: (state, user) => {
+      updateoldUser: async (state, user) => {
+        const update = () => {
+          return new Promise ((resolve, reject) => {
+          state.create_updatestatus = 0
         api.UPDATE_USER(user)
-        .then((res) => { console.log(res); this.GET_USERS() })
+        .then((res) => {resolve(res)})
+        .catch((err) => {reject(err)})
+        })
+        .then((res) => { state.create_updatestatus = res.status; this.GET_USERS(0)})
         .catch((err) => { state.create_error.error = err.message })
     
-        return true;
+        }
+
+        return await update()
       },
+
+      changeuserpassword: async (state, user) => {
+        const change = () => {
+          return new Promise ((resolve, reject) => {
+          state.create_passwordstatus = 0
+        api.CHANGE_PASSWORD(user)
+        .then((res) => {resolve(res)})
+        .catch((err) => {reject(err)})
+        })
+        .then((res) => { state.create_passwordstatus = res.status; this.GET_USERS(0)})
+        .catch((err) => { state.create_error.error = err.message })
+    
+        }
+
+        return await change()
+      },
+
+
+
 
       DeleteUser: (state, userid) => {
         api.DELETE_USER(userid)
@@ -67,13 +98,21 @@ let state = {
 
       clearStatusLog: (state) => {
         state.create_userstatus = undefined
+      },
+      clearPasswordStatusLog: (state) => {
+        state.create_passwordstatus = undefined
+      },
+
+      clearUpdateStatusLog: (state) => {
+        state.create_updatestatus = undefined
       }
     }
 
     const actions = {
         getUsers: ({commit}, userslist) => commit('getUsers', userslist) ,
         createNewUser: ({commit}, user) => commit('createNewUser', user),
-        updateUser: ({commit}, user) => commit('updateUser', user),
+        updateoldUser: ({commit}, user) => commit('updateoldUser', user),
+        changeuserpassword: ({commit}, user) => commit('changeuserpassword', user),
         DeleteUser: ({commit}, userid) => commit('DeleteUser', userid)
       }
       export default {

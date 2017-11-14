@@ -1,15 +1,29 @@
 <tr>
-        <td>
-            <input 
+    <template>
+    <td>
+    <input 
               type = "checkbox" 
               :value = "userid" 
               @click = "isSelected"
               v-model = "checkbox"
             />
-        </td>
-        <td>{{fullname}}</td>
+    </td>
+        <td class="updateUser" @click="isActive = true">{{fullname}}</td>
         <td>{{emailaddress}}</td>
         <td>{{phonenumber}}</td>
         <td>{{datecreated}}</td>
         <td>{{lastlogin}}</td>
-    </tr>
+    
+    <updateUser
+     :userid="userid"
+     :fullname="fullname"
+     :emailaddress="emailaddress"
+     :phonenumber="phonenumber"
+     :pissid="pissid"
+     :confirmpassword="confirmpassword"
+     :isActive="isActive"
+     :closeModal= "closeModal"
+     v-if="isActive === true"
+    ></updateuser>
+    </template>
+</tr>

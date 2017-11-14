@@ -7,18 +7,18 @@
   </span>
 
   <span v-if="userslist">
-                <div class="table_ctrl">
+                <div class="table_ctrl_small">
                     
                     <a 
                         @click = "setAddModalActive"
                         class="table_ctrl_item">
                         <i class="fa fa-plus"></i>
                     </a>
-                    <a 
+                    <!-- <a 
                         @click = "setUpdateModalActive"
                         class="table_ctrl_item">
                         <i class="fa fa-edit"></i>
-                    </a>
+                    </a> -->
                     <a
                         @click = "deleteUser"
                         class="table_ctrl_item">
@@ -58,11 +58,11 @@
             :closeModal = "setAddModalActive"
         >
         </addUser>
-        <updateUser
+        <!-- <updateUser
             :isActive="openupdateModal"
             :closeModal = "setUpdateModalActive"
         >
-        </updateUser>
+        </updateUser> -->
 
     </span>
     
