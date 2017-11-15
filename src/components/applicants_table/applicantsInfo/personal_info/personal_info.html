@@ -4,57 +4,93 @@
       <span class="column is-one-quarter">
         <img 
           alt="applicant passport" 
-          :src="'https://s3.amazonaws.com/comsoftltd.net/nda69thregular/passport/'+appPhoto"
+          :src="'https://s3.amazonaws.com/comsoftltd.net/nda69thregular/passport/'+applicant.passport"
           height="120"
           width="120"
         />
       </span>
       
       <span class="column">
-        <div style="float:left">
-        <p>
-          <strong>
-            <span class="info_id">Name:</span>  
-            <small class="info_">{{appName}}</small>
-          </strong> 
-        </p><br/>
+        <div class="is-pulled-left">
+            <p class="info_row">
+              <strong>
+                <span class="info_id">Name:</span>  
+                <small class="info_">{{applicant.surname+' '+applicant.otherNames}}</small>
+              </strong> 
+            </p>
 
-        <p>
-          <strong>
-            <span style="float:left" class="info_id">State:</span> 
-            <small class="info_"> {{appState}} </small>
-            
-          </strong>
-        </p><br/>
+            <p class="info_row">
+              <strong>
+                <span style="float:left;margin-right:25px">
+                  <span class="info_id">State:</span> 
+                  <small class="info_"> {{applicant.lgaid.stateid.description}} </small>
+                </span>
 
-        <p>
-          <strong>
-            <span class="info_id">LGA:</span> <small class="info_">{{appLga}}</small>
-          </strong> 
-        </p>
+                <span>
+                  <span class="info_id">Sex:</span> 
+                  <small class="info_">{{applicant.gender}}</small>
+                </span>
+              </strong>
+            </p>
+
+            <p class="info_row">
+              <strong>
+                <span class="info_id">LGA:</span> <small class="info_">{{applicant.lgaid.description}}</small>
+              </strong> 
+            </p>
+
+            <span class="columns is-pulled-left">
+              <div class="column">
+                <p class="info_row" style="overflow-x:vivible">
+                    <strong>
+                      <span class="info_id">Faculty:</span> <small class="info_">{{applicant.deptid.facultyid.description}}</small>
+                    </strong> 
+                </p>
+              </div>
+            </span>
 
         </div>
 
-        <div style="float:right">
-        <p>
-          <strong>
-            <span class="info_id">Choices:</span> 
-            <small class="info_">
-              Nigerian 
-              <span>{{appFirstchoice}} /</span>
-              <span>{{appSecondchoice}}</span>
-            </small>
-          </strong>
-        </p><br/>
+        <div class="is-pulled-right">
+            <p class="info_row">
+              <strong>
+                <span class="info_id">Choices:</span> 
+                <small class="info_">
+                  Nigerian 
+                  <span>{{appFirstchoice}} /</span>
+                  <span>{{appSecondchoice}}</span>
+                </small>
+              </strong>
+            </p>
 
-        <p>
-          <strong>
-            <span class="info_id">Phone number:</span> 
-            <small class="info_">{{appPhone}}</small>
-          </strong>
-        </p>
+            <p class="info_row">
+              <strong>
+                <span class="info_id">Phone number:</span> 
+                <small class="info_">{{applicant.mobileNo1}}</small>
+              </strong>
+            </p>
+
+            <p class="info_row">
+              <strong>
+                <span class="info_id">DOB:</span> 
+                <small class="info_">{{applicant.dateofbirthstr}}</small>
+              </strong>
+            </p>
+
+            <span class="columns is-pulled-left">
+              <div class="column">
+                <p class="info_row" style="overflow-x:vivible">
+                    <strong>
+                      <span class="info_id">Dept:</span> <small class="info_">{{applicant.deptid.description}}</small>
+                    </strong> 
+                </p>
+              </div>
+            </span>
         </div>
+
       </span>
+
+      
     </p>
   </div>
 </div>

@@ -1,26 +1,17 @@
 
 <tr>
   <template>
-    <td class="applicantName" @click="isActive = true">{{appName}}</td>
-    <td>{{appGender}}</td>
-    <td>{{appPhone}}</td>
-    <td>{{appState}}</td>
-    <td>{{appLga}}</td>
-    <td>{{appRegno}}</td>
+    <td class="applicantName" @click="isActive = true">{{applicant.surname+' '+applicant.otherNames}}</td>
+    <td>{{applicant.gender}}</td>
+    <td>{{applicant.mobileNo1}}</td>
+    <td>{{applicant.lgaid.stateid.description}}</td>
+    <td>{{applicant.lgaid.description}}</td>
+    <td>{{applicant.regnumber}}</td>
 
     <applicantsInfo
-      :appRegno = "appRegno"
-      :appName = "appName"
-      :appState= "appState"
-      :appLga = "appLga"
-      :appPhone = "appPhone"
-      :appQualification="appQualification"
-      :appFchoice="appFchoice"
-      :appSchoice="appSchoice"
-      :appPhoto="appPhoto"
+      :applicant="applicant"
+      :closeModal="closeModal"
       :isActive="isActive"
-      :closeModal= "closeModal"
-      :appDocs="appDocs"
       v-if="isActive === true"
     ></applicantsInfo>
   </template>  

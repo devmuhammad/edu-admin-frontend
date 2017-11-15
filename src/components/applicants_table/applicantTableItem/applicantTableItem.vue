@@ -7,19 +7,7 @@ import applicantsInfo from "@/components/applicants_table/applicantsInfo/applica
 
 export default {
   name:"applicanTtableItem",
-  props:[
-    'appName', 
-    'appGender', 
-    'appPhone', 
-    'appState', 
-    'appLga', 
-    'appRegno', 
-    'appQualification', 
-    'appFchoice', 
-    'appSchoice', 
-    'appPhoto',
-    'appDocs'
-  ],
+  props:['applicant'],
   data () {
     return {
       isActive:false

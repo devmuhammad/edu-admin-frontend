@@ -21,7 +21,7 @@ export default {
       let currentPath = window.location.pathname.split('/',4)
           ,parentPath = "/"+currentPath[1];
       let newState = {isQualificationsActive:false,isDocsActive:false}
-      console.log(parentPath)
+      
       switch(parentPath)
       {
         case '/applications':

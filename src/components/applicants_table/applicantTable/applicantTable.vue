@@ -10,33 +10,35 @@ import {mapGetters, mapActions} from "vuex"
 
 export default {
   name:"applicantTable",
-  mounted: function(){ return this.getApplicants(this.getAppParams)},
+  mounted: function(){ return this.getApplicants()},
   data () {
     return {
       loading: true,
-      getAppParams:{offset:0,limit:10}
+      getAppParams:{offset:0,limit:10,state:"kaduna"}
     }
   },
   computed:{
     ...mapGetters(["applicants"]),
   },
   methods:{
-    ...mapActions(["getApplicants"]),
+    ...mapActions(["getApplicants", "SET_SEARCH_PARAMS"]),
 
     next () {
-      let newAppParams = {offset:0,limit:10}
+      let newAppParams = {offset:0,limit:10,state:"kaduna"}
       newAppParams.offset = this.getAppParams.offset + 10
       this.getAppParams = newAppParams
+      this.SET_SEARCH_PARAMS(newAppParams)
 
-      return this.getApplicants(this.getAppParams)
+      return this.getApplicants()
     },
     
     prev () {
-      let newAppParams = {offset:0,limit:10}
+      let newAppParams = {offset:0,limit:10,state:"kaduna"}
       newAppParams.offset = this.getAppParams.offset - 10
       this.getAppParams = newAppParams
+      this.SET_SEARCH_PARAMS(newAppParams)
 
-      return this.getApplicants(this.getAppParams)
+      return this.getApplicants()
     }
   },
   components:{applicantTableItem, FadeLoader, Pagination}

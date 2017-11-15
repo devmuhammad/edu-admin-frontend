@@ -19,17 +19,7 @@
           <applicantTableItem 
             v-for="(applicant,index) in applicants"
             :key="index"
-            :appName="applicant.surname+' '+applicant.otherNames"
-            :appGender="applicant.gender"
-            :appPhone="applicant.mobileNo1"
-            :appState="applicant.lgaid.stateid.description"
-            :appLga="applicant.lgaid.description"
-            :appRegno="applicant.regnumber"
-            :appQualification="applicant.qualificationsList"
-            :appFchoice="applicant.serviceFChoice"
-            :appSchoice="applicant.serviceSChoice"
-            :appPhoto=applicant.passport
-            :appDocs="applicant.documentsList">
+            :applicant="applicant">
           </applicantTableItem>
       </tbody>
   </table>  

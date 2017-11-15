@@ -4,21 +4,13 @@
     <div class="modal-card infoModal">
       <header class="modal-card-head">
         <personalInfo 
-          :appRegno="appRegno"
-          :appName ="appName"
-          :appState="appState"
-          :appLga="appLga"
-          :appPhone="appPhone"
-          :appQualification="appQualification"
-          :appFchoice="appFchoice"
-          :appSchoice="appSchoice"
-          :appPhoto="appPhoto">
+          :applicant="applicant">
         </personalInfo>
         
       </header>
 
       <section class="modal-card-body">
-        <infoTab :dcount="appDocs"></infoTab>
+        <infoTab :dcount="applicant.documentsList"></infoTab>
         <qualifications 
           :style="{display:displayQualifications}"
           :appQualification="sortQualification">
@@ -26,7 +18,7 @@
 
         <documents 
           :style="{display:displayDocs}"
-          :appDocs="appDocs">
+          :appDocs="applicant.documentsList">
         </documents>
       </section>
 
