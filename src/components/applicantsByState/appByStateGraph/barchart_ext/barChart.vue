@@ -19,7 +19,11 @@ export default {
           'borderWidth': 1,
           'pointBorderColor': '#249EBF',
           'backgroundColor': '#00923f',
-          'data': this.chartData
+          'data': this.chartData,
+          datalabels: {
+						align: 'end',
+						anchor: 'end'
+					}
         }
       ]
       }, this.options)

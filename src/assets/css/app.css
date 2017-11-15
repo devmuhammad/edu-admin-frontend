@@ -68,6 +68,13 @@ nav > .panel-heading{
     height:25px;
     border-radius: 3px;
 }
+.table_ctrl_small{
+    background-color: #da251c;
+    width:70px;
+    float:right;
+    height:25px;
+    border-radius: 3px;
+}
 
 .table_ctrl_item {
     color:#fff;
@@ -87,6 +94,7 @@ nav > .panel-heading{
 .ExamCenterModal{
     background-color:#fff;
     height:400px;
+    width:800px;
     padding:50px;
     border-radius:5px
 }
@@ -99,6 +107,17 @@ nav > .panel-heading{
     background-color: transparent;
     border: 1px solid #f0f0f0;
 }
+.userManagementModal{
+    background-color:#fff;
+    height: 700px;
+    width: 700px;
+    padding: 15px;
+    border-radius:5px
+}
+.userManagerLogo{
+    margin-top:200px;
+}
+
 
 .pagntn{
     margin-bottom: -150px
@@ -130,16 +149,19 @@ nav > .panel-heading{
     width:840px;
     height: 100%;
 } 
-.userManagementModal{
-    background-color:#fff;
-    height: 700px;
-    width: 900px;
-    padding: 15px;
-    border-radius:5px
-}
-.userManagementLogo{
-    margin-top:200px;
-}
+
+.hero-banner .hero {
+    background: url('../img/loginbg.jpg');
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
+  }
+  
+  .hero-banner .title {
+    display: inline-block;
+    background-color: rgba(0,0,0, 0.6);
+    padding: 5px;
+  }
 
 .panel > div > .is-active{
     background-color: #FFF;
@@ -172,4 +194,17 @@ nav > .panel-heading{
     margin:100px 10px 10px 10px;
     text-align:center;
     color:#fff500;
+}
+.updateUser{
+    cursor: pointer;
+}
+.changePasswordModal{
+    background-color:#fff;
+    height: 350px;
+    width: 500px;
+    padding: 15px;
+    border-radius:5px
+}
+.changePasswordLogo{
+    margin-top:100px;
 }

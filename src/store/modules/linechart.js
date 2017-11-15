@@ -11,7 +11,7 @@ let state = {
         gridLines: { 'display': true }
       }],
       xAxes: [{
-        scaleLabel: { 'display': true, 'labelString': 'States' },
+        scaleLabel: { 'display': true, 'labelString': 'Weeks' },
         ticks: { 'autoSkip': false },
         gridLines: {'display': false}
       }]

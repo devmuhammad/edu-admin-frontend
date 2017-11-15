@@ -4,10 +4,11 @@
 
 <script>
 import usersampleTable from '@/components/usermanagementsample/usersampleTable/usersampleTable'
+import userManagementTable from './userManagementTable/userManagementTable'
 
 export default {
   name:"userManagement",
-  components: {usersampleTable}
+  components: {userManagementTable, usersampleTable}
 }
 </script>
 

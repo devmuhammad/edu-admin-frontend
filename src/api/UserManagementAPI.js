@@ -5,7 +5,7 @@ export default {
       const res = () => {
         return new Promise ((resolve, reject) => {
           HTTP.post('add/user/', user)
-          .then(response => { resolve(response.data) })
+          .then(response => { resolve(response) })
           .catch(e => { reject(e) })
         })
       }
@@ -15,15 +15,28 @@ export default {
 
     UPDATE_USER: async (user) => {
       const res = () => {
-        return new Promise((resolve , reject) => {
-          HTTP.PUT(`update/user/`, user)
-          .then(response => { resolve(response.data) })
-          .catch(e => { reject(e); })
+        return new Promise((resolve, reject) => {
+          HTTP.put(`update/user/`, user)
+          .then(response => { resolve(response) })
+          .catch(e => { reject(e) })
         })
       }
 
       return await res()
     },
+
+    CHANGE_PASSWORD: async (user) => {
+      const res = () => {
+        return new Promise((resolve, reject) => {
+          HTTP.put(`changepassword/`, user)
+          .then(response => { resolve(response) })
+          .catch(e => { reject(e) })
+        })
+      }
+
+      return await res()
+    },
+
 
     DELETE_USER: async (id) => {
       const res = () => {
@@ -49,10 +62,10 @@ export default {
       return await res()
     },
 
-    GET_USERS: async (userslist) => {
+    GET_USERS: async () => {
       const res = () => {
         return new Promise((resolve, reject) => {
-          HTTP.post(`user?=` + userslist)
+          HTTP.post(`/userprofile` )
           .then((response) => { resolve(response.data)  })
           .catch(e => { console.log(e); reject(e) })
         })
