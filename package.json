@@ -12,6 +12,8 @@
   "dependencies": {
     "axios": "^0.16.2",
     "bulma": "^0.6.0",
+    "chart.js": "^2.7.0",
+    "chartjs-plugin-datalabels": "^0.1.0",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "vee-validate": "^2.0.0-rc.19",

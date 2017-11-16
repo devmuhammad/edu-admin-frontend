@@ -2,7 +2,8 @@ import api from "../../api/applicants"
 
 let state = {
   applicants: [],
-  get_error: {}
+  get_error: {},
+  sparams:{offset:0,limit:10,state:"Rivers"}
 }
 
 let getters = {
@@ -10,12 +11,13 @@ let getters = {
 }
 
 let mutations = {
-  getApplicants: async (state,params) => {
+  getApplicants: async (state) => {
     const getApp = () => {
       return new Promise ((resolve, reject) => {
         //state.create_status = 0
         state.applicants = new Array()
-        api.GET_APPLICANTS(params.offset,params.limit)
+        //state.sparams = params
+        api.GET_APPLICANTS(state.sparams)
         .then((res) => { resolve(res)})
         .catch((err) => { reject(err) })
       })
@@ -24,11 +26,16 @@ let mutations = {
     }
 
     return await getApp()
+  },
+
+  SET_SEARCH_PARAMS: (state,params) => {
+    state.sparams = params
   }
 }
 
 let actions = {
-  getApplicants:({commit},params) => commit('getApplicants',params) 
+  getApplicants:({commit}) => commit('getApplicants'),
+  SET_SEARCH_PARAMS:({commit},params) => commit('SET_SEARCH_PARAMS',params) 
 }
 
 export default {

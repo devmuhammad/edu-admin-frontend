@@ -10,7 +10,7 @@ import documents from "./documents/documents"
 
 export default {
   name:"applicantsInfo",
-  props:["isActive", "closeModal", "appRegno", "appName", "appState", "appLga", "appPhone", 'appQualification', 'appFchoice', 'appSchoice', 'appPhoto', 'appDocs'],
+  props:["isActive", "closeModal", "applicant"],
   mounted: function() { return this.setComponent() },
   data () {
     return {
@@ -34,11 +34,11 @@ export default {
   },
   computed:{
     sortQualification(){
-        let qualification = this.appQualification
+        let qualification = this.applicant.qualificationsList
         let fsiting = {examcenter: "",examnumber: "",examtype: "",year: "",subjects: []}
         let ssiting = {examcenter: "",examnumber: "",examtype: "",year: "",subjects: []}
 
-        for(let i = 0;i < this.appQualification.length;i++){
+        for(let i = 0;i < qualification.length;i++){
           let pointr = qualification[i]
 
           if(pointr.sitingtag === 1){

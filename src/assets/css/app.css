@@ -127,12 +127,21 @@ nav > .panel-heading{
     cursor: pointer;
 }
 
+.applicantName:hover{
+    cursor: pointer;
+    font-weight:600
+}
+
 .info_id{
     color:#666;
 }
 
 .info_{
     color: #00923f
+}
+
+.info_row{
+    padding:5px 0 5px 0;
 }
 
 .infoModal{
@@ -146,17 +155,35 @@ nav > .panel-heading{
     background-position: center;
     background-size: cover;
     background-blend-mode: screen;
-  }
+}
   
-  .hero-banner .title {
+.hero-banner .title {
     display: inline-block;
     background-color: rgba(0,0,0, 0.6);
     padding: 5px;
-  }
+}
 
 .panel > div > .is-active{
     background-color: #FFF;
     font-weight: 600;
+}
+
+.doc-thumbnail{
+    cursor: pointer
+}
+
+.docName{
+    background-color: #f1f1f1;
+    color:#333;
+    font-weight: 600;
+    height: 50px;
+}
+
+.modal>.docpmodal{
+    position: relative;
+    background-color: #fff;
+    width: 500px;
+    height: 100%;
 }
 
 .panel{
@@ -168,9 +195,11 @@ nav > .panel-heading{
     text-align:center;
     color:#fff500;
 }
+
 .updateUser{
     cursor: pointer;
 }
+
 .changePasswordModal{
     background-color:#fff;
     height: 350px;
@@ -178,6 +207,35 @@ nav > .panel-heading{
     padding: 15px;
     border-radius:5px
 }
+
 .changePasswordLogo{
     margin-top:100px;
+}
+
+.login-container{
+    width: 60%;
+    padding: 50px;
+    background-color: rgb(#000,0.1);
+}
+
+.loginArea{
+    padding: 80px 30px 80px 30px;
+    background-color: #fff;
+    border:1px solid transparent;
+    box-shadow: 0px;
+}
+
+.loginLogo{
+    margin-top:45px;
+}
+
+.loginSection{
+    height: 100%;
+}
+
+.parentBox{
+    background-image: url("../img/loginbg.jpg");
+    padding: 40px;
+    background-size: 50% 100%;
+    background-repeat: no-repeat;
 }

@@ -1,4 +1,8 @@
 <template>
+<<<<<<< HEAD
+<login>
+=======
+>>>>>>> aff08176c8eceb1b89b1ddbdec463416a1153aa2
   <div id="app">
     <span v-if="isLoggedIn === false"><login></login></span>  
     <span v-else>
@@ -12,6 +16,7 @@
       </section> 
     </span>   
   </div>
+  </login>
 </template>
 
 <script>

@@ -10,9 +10,14 @@
             <i class="fa fa-globe"></i>
             </span>
             <span class="select">
-            <select>
-                <option selected>Select state</option>
-                <option>Abia</option>
+            <select v-model="state" name="state">
+                <option :value="undefined" disabled>Select state</option>
+                <option value="Abia" selected>Abia</option>
+                <option value="Adamawa" >Adamawa</option>
+                <option value="sokoto">Sokoto</option>
+                <option value="kaduna">Kaduna</option>
+                <option value="lagos">Lagos</option>
+                <option value="rivers">Rivers</option>
             </select>
             </span>
         </p>
@@ -21,30 +26,34 @@
             <i class="fa fa-book"></i>
             </span>
             <span class="select">
-            <select>
-                <option selected>Select course</option>
-                <option>Computer science</option>
+            <select v-model="course" name="course">
+                <option :value="undefined" disabled>Select course</option>
+                <option value="computer science">Computer science</option>
             </select>
             </span>
         </p>
         <p class="control is-expanded">
-            <input class="input" type="text" placeholder="Find applicant by Name, Applicant ID, JAMB number, or Exam Center">
+            <input 
+              v-model="svalue"
+              class="input" 
+              type="text" 
+              placeholder="Find applicant by Name, Phone number, or Registration number">
         </p>
         <p class="control has-icons-left">
             <span class="icon is-small is-left">
             <i class="fa fa-filter"></i>
             </span>
             <span class="select">
-            <select>
-                <option selected>Applicant ID</option>
-                <option>Name</option>
-                <option>JAMB Number</option>
-                <option>Exam center</option>
+            <select v-model="sfield" name="sfield">
+                <option :value="undefined" disabled>Filter by</option>
+                <option value="mobileNo1">Phone number</option>
+                <option value="surname">Surname</option>
+                <option value="regnumber">Registration number</option>
             </select>
             </span>
         </p>
         <p class="control">
-            <button class="button is-primary">Search</button>
+            <button class="button is-primary" @click="search">Search</button>
         </p>
     </div> 
 </div>

@@ -1,42 +1,36 @@
 import api from "../../api/Login"
 
 let state = {
-    user: {},
-    create_error:{},
-    create_loginstatus:undefined
+  user: {},
+  login_error: {},
+  login_status: false,
+  isLoggedIn:false
 }
 
 const getters = {
-
-    create_loginstatus: state => state.create_loginstatus
-
+  login_status: state => state.login_status,
+  isLoggedIn: state => state.isLoggedIn
 }
 
 const mutations = {
-
-    userlogin: async (state, user) => {
-        const login = () => {
-          return new Promise ((resolve, reject) => {
-          state.create_loginstatus = 0
+  userLogin: async (state, user) => {
+    const login = () => {
+      return new Promise((resolve, reject) => {
+        state.login_status = 0
         api.LOGIN(user)
-        .then((res) => {resolve(res)})
-        .catch((err) => {reject(err)})
-        })
-        .then((res) => { state.create_loginstatus = res.status})
-        .catch((err) => { state.create_error.error = err.message })
-    
-        }
+        .then((res) => { resolve(res) })
+        .catch((err) => { reject(err) })
+      })
+      .then((res) => { console.log(res);return (res.respcode == "001") ? state.isLoggedIn = true:state.isLoggedIn = false; })
+      .catch((err) => { state.login_error.error = err.message })
+    }
 
-        return await login()
-      },
-      clearLoginStatusLog: (state) => {
-        state.create_loginstatus = undefined
-      },
-
+    return await login()
+  }
 }
 
 const actions = {
-    userlogin: ({commit}, user) => commit ('userlogin',user)
+  userLogin: ({ commit }, user) => commit('userLogin', user)
 }
 
 export default {

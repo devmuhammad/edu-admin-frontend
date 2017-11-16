@@ -3,34 +3,37 @@
 </template>
 
 <script>
-import FadeLoader from "../../../node_modules/vue-spinner/src/FadeLoader.vue"
-import {mapGetters, mapActions} from "vuex"
-
+import {mapState,mapGetters,mapActions} from "vuex"
 
 export default {
-    name: "login",
-    data() {
-        return {
-            loading:true,
-            user: {userid: "",  password: ""}
-        }
-    },
-    computed:{
-    ...mapGetters({ 
-      response_status: "create_loginstatus"
-    }),
-    },
-    methods: {
-        ...mapActions([
-      "userlogin"
-    ]),
-
-        login() {return this.userlogin(this.user)}
-
-
-
-    },
-    components: {FadeLoader}
-
-}
+  name: "login",
+  data() {
+    return {
+      isLoading: false,
+      user:{ userid:"", password:"" },
+      error:""
+    };
+  },
+  methods: {
+    ...mapActions(["userLogin"]),
+    login() {
+      this.getStatus
+      if(this.user.userid == "" || this.user.password == ""){
+        this.error = "You can't submit an empty form!";
+        this.isLoading = false;
+      }else{
+        return this.userLogin(this.user);
+      }
+    }
+  },
+  computed:{
+    ...mapGetters(["login_status"]),
+    getStatus(){
+      return (this.login_status==0) 
+      ? this.isLoading = true
+      : this.isLoading = false;
+    }
+  },
+  components: {}
+};
 </script>

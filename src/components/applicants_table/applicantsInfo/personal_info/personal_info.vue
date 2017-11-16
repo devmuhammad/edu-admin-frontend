@@ -5,38 +5,28 @@
 <script>
 export default {
   name:"personaInfo",
-  props:[
-    'appRegno',
-    'appName',
-    'appState',
-    'appPhone',
-    'appLga',
-    'appQualification',
-    'appFchoice', 
-    'appSchoice', 
-    'appPhoto'
-  ],
+  props:["applicant"],
   computed:{
     appFirstchoice(){
-      if(this.appFchoice === 'NA'){
+      if(this.applicant.serviceFChoice === 'NA'){
         return 'Army'
       }
-      else if(this.appFchoice === 'NAF'){
+      else if(this.applicant.serviceFChoice === 'NAF'){
         return "Air Force"
       }
-      else if(this.appFchoice === 'NN'){
+      else if(this.applicant.serviceFChoice === 'NN'){
         return 'Navy'
       }
     },
 
     appSecondchoice(){
-      if(this.appSchoice === 'NA'){
+      if(this.applicant.serviceSChoice === 'NA'){
         return 'Army'
       }
-      else if(this.appSchoice === 'NAF'){
+      else if(this.applicant.serviceSChoice === 'NAF'){
         return "Air Force"
       }
-      else if(this.appSchoice === 'NN'){
+      else if(this.applicant.serviceSChoice === 'NN'){
         return 'Navy'
       }
     }
