@@ -1,10 +1,11 @@
-<div class="applicant_table"> 
-<div v-if="applicants.length > 0">    
-<div class="table_ctrl" style="width:70px">
-    <span class="table_ctrl_item"><i class="fa fa-print"></i> Print</span>
-</div>  
+<div class="applicant_table">
+  <div v-if="applicants.length > 0">
+    <div class="table_ctrl" style="width:70px">
+      <span class="table_ctrl_item">
+        <i class="fa fa-print"></i> Print</span>
+    </div>
 
-  <table class="table is-fullwidth is-bordered is-striped is-narrow">
+    <table class="table is-fullwidth is-bordered is-striped is-narrow">
       <thead>
         <tr>
           <th>Name</th>
@@ -15,38 +16,25 @@
           <th>Registration number</th>
         </tr>
       </thead>
-      <tbody> 
-          <applicantTableItem 
-            v-for="(applicant,index) in applicants"
-            :key="index"
-            :applicant="applicant">
-          </applicantTableItem>
+      <tbody>
+        <applicantTableItem v-for="(applicant,index) in applicants" :key="index" :applicant="applicant">
+        </applicantTableItem>
       </tbody>
-  </table>  
+    </table>
 
-  <div class="columns">
-    <span class="column is-one-quarter"></span>
-    <span class="column">
-      <Pagination
-        :f=1
-        :s=2
-        :t=3
-        :lastPage=100
-        :next="next"
-        :prev="prev"></Pagination>
-    </span>  
-    <span class="column is-one-quarter"></span>  
+    <div class="columns">
+      <span class="column is-one-quarter"></span>
+      <span class="column">
+        <Pagination :f=1 :s=2 :t=3 :lastPage=100 :next="next" :prev="prev"></Pagination>
+      </span>
+      <span class="column is-one-quarter"></span>
+    </div>
   </div>
-</div> 
 
-<span class="columns" v-else>
+  <span class="columns" v-else>
     <span class="column"></span>
     <span class="column" style="margin-top:200px;padding-bottom:200px">
-        <FadeLoader
-          :loading = "loading"  
-          color="#da251c"
-          size="20px"
-        ></FadeLoader>
+      <FadeLoader :loading="loading" color="#da251c" size="20px"></FadeLoader>
     </span>
-</span>
-</div>    
+  </span>
+</div>

@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       loading: true,
-      getAppParams:{offset:0,limit:10,state:"kaduna"}
+      getAppParams:{offset:0,limit:10,state:"Rivers"}
     }
   },
   computed:{
@@ -24,7 +24,7 @@ export default {
     ...mapActions(["getApplicants", "SET_SEARCH_PARAMS"]),
 
     next () {
-      let newAppParams = {offset:0,limit:10,state:"kaduna"}
+      let newAppParams = {offset:0,limit:10,state:"Rivers"}
       newAppParams.offset = this.getAppParams.offset + 10
       this.getAppParams = newAppParams
       this.SET_SEARCH_PARAMS(newAppParams)
@@ -33,7 +33,7 @@ export default {
     },
     
     prev () {
-      let newAppParams = {offset:0,limit:10,state:"kaduna"}
+      let newAppParams = {offset:0,limit:10,state:"Rivers"}
       newAppParams.offset = this.getAppParams.offset - 10
       this.getAppParams = newAppParams
       this.SET_SEARCH_PARAMS(newAppParams)

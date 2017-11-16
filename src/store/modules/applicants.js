@@ -3,7 +3,7 @@ import api from "../../api/applicants"
 let state = {
   applicants: [],
   get_error: {},
-  sparams:{offset:0,limit:10,state:"kaduna"}
+  sparams:{offset:0,limit:10,state:"Rivers"}
 }
 
 let getters = {
