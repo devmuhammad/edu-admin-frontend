@@ -7,6 +7,7 @@ import Dashboard from './modules/dashboard'
 import linechart from './modules/linechart'
 import userManagement from './modules/usermanagement'
 import Applicants from './modules/applicants'
+import Login from './modules/login'
 
 Vue.use(Vuex)
 
@@ -18,6 +19,7 @@ export default new Vuex.Store({
     Dashboard,
     linechart,
     userManagement,
-    Applicants
+    Applicants,
+    Login
   }
 })  

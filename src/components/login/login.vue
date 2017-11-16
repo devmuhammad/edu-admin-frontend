@@ -4,6 +4,7 @@
 
 <script>
 import FadeLoader from "../../../node_modules/vue-spinner/src/FadeLoader.vue"
+import {mapGetters, mapActions} from "vuex"
 
 
 export default {
@@ -11,10 +12,18 @@ export default {
     data() {
         return {
             loading:true,
-            user: {userid: "",password: ""}
+            user: {userid: "",  password: ""}
         }
     },
+    computed:{
+    ...mapGetters({ 
+      response_status: "create_loginstatus"
+    }),
+    },
     methods: {
+        ...mapActions([
+      "userlogin"
+    ]),
 
         login() {return this.userlogin(this.user)}
 

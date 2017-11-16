@@ -1,5 +1,5 @@
 <template>
-
+<login>
   <div id="app">
   <Navbar/>
     <section class="section">
@@ -12,6 +12,7 @@
       </div>
     </section>  
   </div>
+  </login>
 </template>
 
 <script>
