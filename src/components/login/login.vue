@@ -10,7 +10,7 @@ export default {
   data() {
     return {
       isLoading: false,
-      user:{ userId:"", pass:"" },
+      user:{ userid:"", password:"" },
       error:""
     };
   },
@@ -18,7 +18,7 @@ export default {
     ...mapActions(["userLogin"]),
     login() {
       this.getStatus
-      if(this.user.userId == "" || this.user.pass == ""){
+      if(this.user.userid == "" || this.user.password == ""){
         this.error = "You can't submit an empty form!";
         this.isLoading = false;
       }else{
