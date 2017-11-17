@@ -10,11 +10,11 @@
         </div>
 
         <div class="column">
-          <h2 class="title is-3">
+          <h2 class="title is-4">
             <i class="fa fa-lock"></i>
             <span>Login</span>
           </h2>
-          <h2 class="subtitle is-6"> Restricted: Provide login details please. </h2>
+          <h2 class="subtitle is-6"> <small>Restricted: Provide login details please.</small> </h2>
           
           <div>
           <div v-if="error != ''" style="color:#da2347;font-weight:600" class="has-text-centered">
@@ -25,7 +25,7 @@
             <div class="field">
               <div class="control">
                 <input 
-                  class="input is-danger is-medium" 
+                  class="input is-danger" 
                   type="text" 
                   placeholder="Username" 
                   v-model.trim="user.userId"
@@ -36,7 +36,7 @@
             <div class="field">
               <div class="control">
                 <input 
-                  class="input is-danger is-medium" 
+                  class="input is-danger" 
                   type="password" 
                   placeholder="**********" 
                   v-model.trim="user.pass"
