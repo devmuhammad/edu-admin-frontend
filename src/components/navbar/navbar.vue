@@ -2,13 +2,13 @@
   
 </template>
 
-<<script>
+<script>
+import {mapActions} from "vuex"
+
 export default {
   name:"Navbar",
-  data () {
-    return {
-      
-    }
+  methods:{
+    ...mapActions(["userLogout"])
   }
 }
 </script>

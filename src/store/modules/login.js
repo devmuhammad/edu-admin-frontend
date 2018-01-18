@@ -9,7 +9,8 @@ let state = {
 
 const getters = {
   login_status: state => state.login_status,
-  isLoggedIn: state => state.isLoggedIn
+  isLoggedIn: state => state.isLoggedIn,
+  loginErr: state => state.login_error
 }
 
 const mutations = {
@@ -21,16 +22,33 @@ const mutations = {
         .then((res) => { resolve(res) })
         .catch((err) => { reject(err) })
       })
-      .then((res) => { console.log(res);return (res.respcode == "001") ? state.isLoggedIn = true:state.isLoggedIn = false; })
-      .catch((err) => { state.login_error.error = err.message })
     }
 
     return await login()
+  },
+
+  userLogout: async (state) => {
+    const localStore = window.localStorage
+    localStore.setItem("ndaapp_cur_user", null)
+    return state.isLoggedIn = false
+  },
+
+  SET_ERR_MSG: (state,error) => { state.login_error.error = error },
+  SET_LOGIN_STATUS: (state,data) => { 
+    state.isLoggedIn = data.status 
+    if(data.userInfo !== null){
+      console.log(data.userInfo)
+      const localStore = window.localStorage
+      localStore.setItem("ndaapp_cur_user", data.userInfo.fullname)
+    }
   }
 }
 
 const actions = {
-  userLogin: ({ commit }, user) => commit('userLogin', user)
+  userLogin: ({ commit }, user) => commit('userLogin', user),
+  userLogout: ({commit}) => commit('userLogout'),
+  SET_ERR_MSG: ({commit}, errMsg) => commit('SET_ERR_MSG', errMsg),
+  SET_LOGIN_STATUS: ({commit}, data) => commit('SET_LOGIN_STATUS', data)
 }
 
 export default {

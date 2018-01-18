@@ -1,38 +1,41 @@
 <div class="user-info columns">
-    <div class="column">
-      <div class ="dropdown is-hoverable">
-          <div class="dropdown-trigger">
-              
-                  <span class="tag is-rounded" aria-haspopup="true" aria-controls="dropdown-menu7">
-                      <span class="icon">
-                         <i class="fa fa-user"></i>
-                      </span>
-                  <span>Gen. Abubakar </span>
-                  <span class="icon is-small">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                  </span>
-                </span>
-                
-      
-    </div>
-    <div class="dropdown-menu" id="dropdown-menu7" role="menu">
+  <div class="column">
+    <div class="dropdown is-hoverable">
+      <div class="dropdown-trigger">
+
+        <span class="tag is-rounded" aria-haspopup="true" aria-controls="dropdown-menu7">
+          <span class="icon">
+            <i class="fa fa-user"></i>
+          </span>
+          <span>{{user}}</span>
+          <span class="icon is-small">
+            <i class="fa fa-angle-down" aria-hidden="true"></i>
+          </span>
+        </span>
+
+
+      </div>
+
+      <div class="dropdown-menu" id="dropdown-menu7" role="menu">
         <div class="dropdown-content">
           <div class="dropdown-item">
-            <p> <strong> <a @click="setPasswordModalActive"> Change Password </a></strong> </p>
+            <p>
+              <strong>
+                <a @click="setPasswordModalActive"> Change Password </a>
+              </strong>
+            </p>
           </div>
         </div>
       </div>
-      </div>
-      <changePassword
-      :isActive="openModal"
-      :closeModal = "setPasswordModalActive"
-  >
-      </changePassword>
+
     </div>
-     
-    <div class="column">
-      <span class="date_section tag is-rounded">
-        <strong>{{ currentDate }}</strong>
-      </span>
-    </div>
+    <changePassword :isActive="openModal" :closeModal="setPasswordModalActive">
+    </changePassword>
+  </div>
+
+  <div class="column">
+    <span class="date_section tag is-rounded">
+      <strong>{{ currentDate }}</strong>
+    </span>
+  </div>
 </div>
