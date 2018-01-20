@@ -3,7 +3,6 @@
 </template>
 
 <script>
-  import FileUpload from 'vue-simple-upload/dist/FileUpload'
 
   export default {
     name:"uploadResult",
@@ -52,7 +51,6 @@ json_data: [],
       }
     },
     components: {
-      'fileupload': FileUpload,
     },
     computed:{
       validResults (){
